@@ -19,7 +19,7 @@
 		AF247CF319BDEFF500AF94CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF247CCF19BDEFF500AF94CE /* Foundation.framework */; };
 		AF247CF419BDEFF500AF94CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF247CD319BDEFF500AF94CE /* UIKit.framework */; };
 		AF247CFC19BDEFF500AF94CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF247CFA19BDEFF500AF94CE /* InfoPlist.strings */; };
-		AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m */; };
+		AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m */; };
 		AF862DF819C1E6B8002A024D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862DF619C1E6B8002A024D /* MainViewController.m */; };
 		AF862DF919C1E6B8002A024D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF862DF719C1E6B8002A024D /* MainViewController.xib */; };
 		AF862DFD19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862DFB19C1E75A002A024D /* DropboxSimpleOAuthViewController.m */; };
@@ -58,7 +58,7 @@
 		AF247CF119BDEFF500AF94CE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AF247CF919BDEFF500AF94CE /* DropboxSimpleOAuthTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DropboxSimpleOAuthTests-Info.plist"; sourceTree = "<group>"; };
 		AF247CFB19BDEFF500AF94CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropboxSimpleOAuthTests.m; sourceTree = "<group>"; };
+		AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropboxSimpleOAuthViewControllerTests.m; sourceTree = "<group>"; };
 		AF862DF519C1E6B8002A024D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AF862DF619C1E6B8002A024D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		AF862DF719C1E6B8002A024D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		AF247CF719BDEFF500AF94CE /* DropboxSimpleOAuthTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m */,
+				AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m */,
 				AF247CF819BDEFF500AF94CE /* Supporting Files */,
 			);
 			path = DropboxSimpleOAuthTests;
@@ -331,7 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF862E0519C1E8B0002A024D /* InstagramConstants.m in Sources */,
-				AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m in Sources */,
+				AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m in Sources */,
 				AF862DFE19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
