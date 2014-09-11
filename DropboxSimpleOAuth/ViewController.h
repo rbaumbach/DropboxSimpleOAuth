@@ -1,5 +1,0 @@
-
-
-@interface ViewController : UIViewController
-
-@end
