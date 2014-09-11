@@ -22,6 +22,12 @@
 		AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m */; };
 		AF862DF819C1E6B8002A024D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862DF619C1E6B8002A024D /* MainViewController.m */; };
 		AF862DF919C1E6B8002A024D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF862DF719C1E6B8002A024D /* MainViewController.xib */; };
+		AF862DFD19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862DFB19C1E75A002A024D /* DropboxSimpleOAuthViewController.m */; };
+		AF862DFE19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862DFB19C1E75A002A024D /* DropboxSimpleOAuthViewController.m */; };
+		AF862DFF19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */; };
+		AF862E0019C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */; };
+		AF862E0419C1E8B0002A024D /* InstagramConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862E0319C1E8B0002A024D /* InstagramConstants.m */; };
+		AF862E0519C1E8B0002A024D /* InstagramConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862E0319C1E8B0002A024D /* InstagramConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		AF862DF519C1E6B8002A024D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AF862DF619C1E6B8002A024D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		AF862DF719C1E6B8002A024D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		AF862DFA19C1E75A002A024D /* DropboxSimpleOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxSimpleOAuthViewController.h; path = Source/DropboxSimpleOAuthViewController.h; sourceTree = "<group>"; };
+		AF862DFB19C1E75A002A024D /* DropboxSimpleOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxSimpleOAuthViewController.m; path = Source/DropboxSimpleOAuthViewController.m; sourceTree = "<group>"; };
+		AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DropboxSimpleOAuthViewController.xib; path = Source/DropboxSimpleOAuthViewController.xib; sourceTree = "<group>"; };
+		AF862E0119C1E7A3002A024D /* DropboxSimpleOAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DropboxSimpleOAuth.h; path = Source/DropboxSimpleOAuth.h; sourceTree = "<group>"; };
+		AF862E0219C1E8B0002A024D /* InstagramConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstagramConstants.h; path = Source/InstagramConstants.h; sourceTree = "<group>"; };
+		AF862E0319C1E8B0002A024D /* InstagramConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstagramConstants.m; path = Source/InstagramConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +130,12 @@
 		AF247CD519BDEFF500AF94CE /* DropboxSimpleOAuth */ = {
 			isa = PBXGroup;
 			children = (
+				AF862E0119C1E7A3002A024D /* DropboxSimpleOAuth.h */,
+				AF862E0219C1E8B0002A024D /* InstagramConstants.h */,
+				AF862E0319C1E8B0002A024D /* InstagramConstants.m */,
+				AF862DFA19C1E75A002A024D /* DropboxSimpleOAuthViewController.h */,
+				AF862DFB19C1E75A002A024D /* DropboxSimpleOAuthViewController.m */,
+				AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */,
 				AF862DF419C1E5F9002A024D /* AppCode */,
 			);
 			path = DropboxSimpleOAuth;
@@ -245,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF247CEB19BDEFF500AF94CE /* Images.xcassets in Resources */,
+				AF862DFF19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */,
 				AF862DF919C1E6B8002A024D /* MainViewController.xib in Resources */,
 				AF247CDA19BDEFF500AF94CE /* InfoPlist.strings in Resources */,
 			);
@@ -255,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF247CFC19BDEFF500AF94CE /* InfoPlist.strings in Resources */,
+				AF862E0019C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF862E0419C1E8B0002A024D /* InstagramConstants.m in Sources */,
 				AF247CE019BDEFF500AF94CE /* AppDelegate.m in Sources */,
+				AF862DFD19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */,
 				AF862DF819C1E6B8002A024D /* MainViewController.m in Sources */,
 				AF247CDC19BDEFF500AF94CE /* main.m in Sources */,
 			);
@@ -308,7 +330,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF862E0519C1E8B0002A024D /* InstagramConstants.m in Sources */,
 				AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthTests.m in Sources */,
+				AF862DFE19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
