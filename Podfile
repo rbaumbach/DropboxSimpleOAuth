@@ -1,7 +1,7 @@
 platform :ios, "7.0"
 
 target "DropboxSimpleOAuth" do
-
+    pod 'AFNetworking', '~> 2.0'
 end
 
 target "DropboxSimpleOAuthTests" do
