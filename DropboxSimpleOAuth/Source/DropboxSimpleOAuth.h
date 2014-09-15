@@ -4,4 +4,5 @@
 #import <UIKit/UIKit.h>
 
 #import "DropboxSimpleOAuthViewController.h"
+#import "DropboxLoginResponse.h"
 
