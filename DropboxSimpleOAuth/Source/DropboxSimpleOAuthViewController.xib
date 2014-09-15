@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DEA-DA-YY4">
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEA-DA-YY4">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,8 +25,14 @@
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="DEA-DA-YY4" secondAttribute="trailing" id="8Vi-nM-c5W"/>
+                <constraint firstItem="DEA-DA-YY4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K8h-EN-5OQ"/>
+                <constraint firstAttribute="bottom" secondItem="DEA-DA-YY4" secondAttribute="bottom" id="Vy0-Om-oWe"/>
+                <constraint firstItem="DEA-DA-YY4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b4A-oM-w3T"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
 </document>
