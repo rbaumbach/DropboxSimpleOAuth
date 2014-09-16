@@ -42,6 +42,8 @@
 		AFFB0E0119C7F4100037577F /* DropboxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0DFF19C7F4100037577F /* DropboxLoginManager.m */; };
 		AFFB0E0519C7FD5C0037577F /* FakeDropboxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0E0419C7FD5C0037577F /* FakeDropboxLoginManager.m */; };
 		AFFB0E0619C7FD5C0037577F /* FakeDropboxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0E0419C7FD5C0037577F /* FakeDropboxLoginManager.m */; };
+		AFFB0E0919C802490037577F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFFB0E0819C802490037577F /* README.md */; };
+		AFFB0E0A19C802490037577F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFFB0E0819C802490037577F /* README.md */; };
 		CB9ACDD63561445488825FA7 /* libPods-DropboxSimpleOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E00ED84243A04C92BDA21300 /* libPods-DropboxSimpleOAuth.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,7 @@
 		AFFB0DFF19C7F4100037577F /* DropboxLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxLoginManager.m; path = Source/DropboxLoginManager.m; sourceTree = "<group>"; };
 		AFFB0E0319C7FD5C0037577F /* FakeDropboxLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeDropboxLoginManager.h; sourceTree = "<group>"; };
 		AFFB0E0419C7FD5C0037577F /* FakeDropboxLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeDropboxLoginManager.m; sourceTree = "<group>"; };
+		AFFB0E0819C802490037577F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E00ED84243A04C92BDA21300 /* libPods-DropboxSimpleOAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DropboxSimpleOAuth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F558143F582B4C258794D889 /* Pods-DropboxSimpleOAuth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropboxSimpleOAuth.xcconfig"; path = "Pods/Pods-DropboxSimpleOAuth.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +137,7 @@
 		AF247CC319BDEFF500AF94CE = {
 			isa = PBXGroup;
 			children = (
+				AFFB0E0719C802400037577F /* Github */,
 				AF247CD519BDEFF500AF94CE /* DropboxSimpleOAuth */,
 				AF247CF719BDEFF500AF94CE /* DropboxSimpleOAuthTests */,
 				AF247CCE19BDEFF500AF94CE /* Frameworks */,
@@ -264,6 +268,14 @@
 			name = "Real Fakes";
 			sourceTree = "<group>";
 		};
+		AFFB0E0719C802400037577F /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				AFFB0E0819C802490037577F /* README.md */,
+			);
+			name = Github;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,6 +358,7 @@
 			files = (
 				AF247CEB19BDEFF500AF94CE /* Images.xcassets in Resources */,
 				AF862DFF19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */,
+				AFFB0E0919C802490037577F /* README.md in Resources */,
 				AF862DF919C1E6B8002A024D /* MainViewController.xib in Resources */,
 				AF247CDA19BDEFF500AF94CE /* InfoPlist.strings in Resources */,
 			);
@@ -355,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFFB0E0A19C802490037577F /* README.md in Resources */,
 				AF247CFC19BDEFF500AF94CE /* InfoPlist.strings in Resources */,
 				AF862E0019C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */,
 			);
