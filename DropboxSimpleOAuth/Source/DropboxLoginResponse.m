@@ -15,6 +15,8 @@ NSString *const DropboxUidKey = @"uid";
 
 @implementation DropboxLoginResponse
 
+#pragma mark - Init Methods
+
 - (instancetype)initWithDropboxOAuthResponse:(NSDictionary *)response;
 {
     self = [super init];
