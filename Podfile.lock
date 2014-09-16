@@ -21,23 +21,29 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Expecta (0.2.4)
+  - MBProgressHUD (0.9)
   - OCMock (3.0.2)
   - RealFakes (0.0.3):
     - AFNetworking (~> 2.0)
   - Specta (0.2.1)
+  - Swizzlean (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Expecta (~> 0.2.1)
+  - MBProgressHUD (~> 0.9)
   - OCMock (~> 3.0.2)
   - RealFakes
   - Specta (~> 0.2.0)
+  - Swizzlean (~> 0.2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   Expecta: 112bcafa2304ee0f3c5e586505f24555a47b25d5
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   OCMock: b9836ab89d8d5e66cbe6333f93857037c310ee62
   RealFakes: 6988e2819e873ff3b31155d8e067b387f2a810cd
   Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+  Swizzlean: dc03ad1d847a3748f456982b7ede4e3bad4a9630
 
 COCOAPODS: 0.33.1

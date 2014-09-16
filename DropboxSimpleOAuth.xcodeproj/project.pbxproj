@@ -40,6 +40,8 @@
 		AFFB0DFD19C7F3FA0037577F /* DropboxLoginManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0DFC19C7F3FA0037577F /* DropboxLoginManagerTests.m */; };
 		AFFB0E0019C7F4100037577F /* DropboxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0DFF19C7F4100037577F /* DropboxLoginManager.m */; };
 		AFFB0E0119C7F4100037577F /* DropboxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0DFF19C7F4100037577F /* DropboxLoginManager.m */; };
+		AFFB0E0519C7FD5C0037577F /* FakeDropboxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0E0419C7FD5C0037577F /* FakeDropboxLoginManager.m */; };
+		AFFB0E0619C7FD5C0037577F /* FakeDropboxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0E0419C7FD5C0037577F /* FakeDropboxLoginManager.m */; };
 		CB9ACDD63561445488825FA7 /* libPods-DropboxSimpleOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E00ED84243A04C92BDA21300 /* libPods-DropboxSimpleOAuth.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		AFFB0DFC19C7F3FA0037577F /* DropboxLoginManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxLoginManagerTests.m; sourceTree = "<group>"; };
 		AFFB0DFE19C7F4100037577F /* DropboxLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxLoginManager.h; path = Source/DropboxLoginManager.h; sourceTree = "<group>"; };
 		AFFB0DFF19C7F4100037577F /* DropboxLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxLoginManager.m; path = Source/DropboxLoginManager.m; sourceTree = "<group>"; };
+		AFFB0E0319C7FD5C0037577F /* FakeDropboxLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeDropboxLoginManager.h; sourceTree = "<group>"; };
+		AFFB0E0419C7FD5C0037577F /* FakeDropboxLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeDropboxLoginManager.m; sourceTree = "<group>"; };
 		E00ED84243A04C92BDA21300 /* libPods-DropboxSimpleOAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DropboxSimpleOAuth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F558143F582B4C258794D889 /* Pods-DropboxSimpleOAuth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropboxSimpleOAuth.xcconfig"; path = "Pods/Pods-DropboxSimpleOAuth.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +200,7 @@
 		AF247CF719BDEFF500AF94CE /* DropboxSimpleOAuthTests */ = {
 			isa = PBXGroup;
 			children = (
+				AFFB0E0219C7FD3C0037577F /* Real Fakes */,
 				AF2B47B219C72CAF00BC0F3B /* Fakes */,
 				AFDEBE3A19C3575B0021F8EF /* TestUtils */,
 				AF247CFD19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m */,
@@ -248,6 +253,15 @@
 				AFDEBE3E19C357760021F8EF /* UIAlertView+TestUtils.m */,
 			);
 			name = TestUtils;
+			sourceTree = "<group>";
+		};
+		AFFB0E0219C7FD3C0037577F /* Real Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				AFFB0E0319C7FD5C0037577F /* FakeDropboxLoginManager.h */,
+				AFFB0E0419C7FD5C0037577F /* FakeDropboxLoginManager.m */,
+			);
+			name = "Real Fakes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFFB0E0519C7FD5C0037577F /* FakeDropboxLoginManager.m in Sources */,
 				AF247CE019BDEFF500AF94CE /* AppDelegate.m in Sources */,
 				AF862DFD19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */,
 				AFFB0E0019C7F4100037577F /* DropboxLoginManager.m in Sources */,
@@ -438,6 +453,7 @@
 				AF2B47AD19C72C1200BC0F3B /* DropboxLoginResponseTests.m in Sources */,
 				AFDEBE3F19C357760021F8EF /* NSLayoutConstraint+TestUtils.m in Sources */,
 				AFFB0E0119C7F4100037577F /* DropboxLoginManager.m in Sources */,
+				AFFB0E0619C7FD5C0037577F /* FakeDropboxLoginManager.m in Sources */,
 				AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m in Sources */,
 				AFFB0DF919C7E9A60037577F /* DropboxLoginUtils.m in Sources */,
 				AFDEBE4019C357760021F8EF /* UIAlertView+TestUtils.m in Sources */,

@@ -27,11 +27,11 @@ describe(@"DropboxLoginManager", ^{
                                                   callbackURL:[NSURL URLWithString:@"http://skid-row.18.2.life"]];
     });
     
-    it(@"has clientID", ^{
+    it(@"has an appKey", ^{
         expect(manager.appKey).to.equal(@"SebastianBach");
     });
     
-    it(@"has a clientSecret", ^{
+    it(@"has an appSecret", ^{
         expect(manager.appSecret).to.equal(@"I-Love-Model-Trains");
     });
     

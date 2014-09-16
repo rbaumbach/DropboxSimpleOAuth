@@ -22,7 +22,7 @@ describe(@"DropboxLoginUtils", ^{
                                            andCallbackURL:[NSURL URLWithString:@"https://every-time.40oz"]];
     });
     
-    it(@"has a clientID", ^{
+    it(@"has an appKey", ^{
         expect(utils.appKey).to.equal(@"colt-45-it-works");
     });
     
