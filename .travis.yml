@@ -1,0 +1,3 @@
+nguage: objective-c
+install: ./setup.sh
+script: rake
