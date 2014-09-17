@@ -94,6 +94,8 @@
 		AF862DFB19C1E75A002A024D /* DropboxSimpleOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxSimpleOAuthViewController.m; path = Source/DropboxSimpleOAuthViewController.m; sourceTree = "<group>"; };
 		AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DropboxSimpleOAuthViewController.xib; path = Source/DropboxSimpleOAuthViewController.xib; sourceTree = "<group>"; };
 		AF862E0119C1E7A3002A024D /* DropboxSimpleOAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DropboxSimpleOAuth.h; path = Source/DropboxSimpleOAuth.h; sourceTree = "<group>"; };
+		AFD4392819C9D4BF00836EC9 /* iPadScreenshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iPadScreenshot.jpg; sourceTree = "<group>"; };
+		AFD4392919C9D4BF00836EC9 /* iPhone5Screenshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iPhone5Screenshot.jpg; sourceTree = "<group>"; };
 		AFDEBE3819C3570F0021F8EF /* DropboxSimpleOAuthViewControllerXibTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxSimpleOAuthViewControllerXibTests.m; sourceTree = "<group>"; };
 		AFDEBE3B19C357760021F8EF /* NSLayoutConstraint+TestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+TestUtils.h"; sourceTree = "<group>"; };
 		AFDEBE3C19C357760021F8EF /* NSLayoutConstraint+TestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+TestUtils.m"; sourceTree = "<group>"; };
@@ -281,6 +283,8 @@
 		AFFB0E0719C802400037577F /* Github */ = {
 			isa = PBXGroup;
 			children = (
+				AFD4392819C9D4BF00836EC9 /* iPadScreenshot.jpg */,
+				AFD4392919C9D4BF00836EC9 /* iPhone5Screenshot.jpg */,
 				AFFB0E0819C802490037577F /* README.md */,
 			);
 			name = Github;
