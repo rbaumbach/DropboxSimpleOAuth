@@ -2,6 +2,11 @@
 
 A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app.
 
+<p align="center">
+   <img src="https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/iPhone5Screenshot.jpg?raw=true" alt="iPhone5 Screenshot"/>
+   <img src="https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/iPadScreenshot.jpg?raw=true" alt="iPad Screenshot"/>
+</p>
+
 ## Adding DropboxSimpleOAuth to your project
 
 ### Clone from Github
