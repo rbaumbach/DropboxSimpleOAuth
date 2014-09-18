@@ -6,7 +6,6 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "UIAlertView+TestUtils.h"
 #import "FakeAFHTTPSessionManager.h"
-#import "FakeDropboxOAuthResponse.h"
 #import "DropboxSimpleOAuth.h"
 #import "DropboxLoginUtils.h"
 #import "DropboxLoginmanager.h"
