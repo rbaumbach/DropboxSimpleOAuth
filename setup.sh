@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install Gem dependencies
+# Install Gem Dependencies
 bundle
 
 # Install Cocoapod Dependencies
