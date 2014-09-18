@@ -9,6 +9,14 @@ A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app
 
 ## Adding DropboxSimpleOAuth to your project
 
+### Cocoapods
+
+[CocoaPods](http://cocoapods.org) is the recommended way to add DropboxSimpleOAuth to your project.
+
+1.  Add DropboxSimpleOAuth to your Podfile `pod 'DropboxSimpleOAuth'`.
+2.  Install the pod(s) by running `pod install`.
+3.  Add DropboxSimpleOAuth to your files with `#import <DropboxSimpleOAuth/DropboxSimpleOAuth.h>`.
+
 ### Clone from Github
 
 1.  Clone repository from github and copy files directly, or add it as a git submodule.
@@ -51,7 +59,6 @@ viewController.shouldShowErrorAlert = NO;
                                      animated:YES];
 ```
 
-
 ## Testing
 
 * Prerequisites: [ruby](https://github.com/sstephenson/rbenv), [ruby gems](https://rubygems.org/pages/download), [bundler](http://bundler.io)
@@ -79,5 +86,5 @@ rake test   # Run Tests
 
 ## Suggestions, requests, and feedback
 
-Thanks for checking out DropboxSimpleOAuth for your in-app Dropbox Authentication.  Any feedback can be
+Thanks for checking out DropboxSimpleOAuth for your in-app Dropbox authentication.  Any feedback can be
 can be sent to: rbaumbach.github@gmail.com.
