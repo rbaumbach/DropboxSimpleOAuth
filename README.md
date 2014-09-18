@@ -1,4 +1,4 @@
-# DropboxSimpleOAuth [![License](http://b.repl.ca/v1/License-MIT-blue.png)](https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/MIT.LICENSE)
+# DropboxSimpleOAuth [![License](http://b.repl.ca/v1/License-MIT-blue.png)](https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/MIT.LICENSE) [![Cocoapod Version](http://img.shields.io/badge/pod-v0.0.1-blue.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![Cocoapod Platform](http://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth)
 
 A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app.
 
