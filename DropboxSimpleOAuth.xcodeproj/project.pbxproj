@@ -31,6 +31,7 @@
 		AF862DFE19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF862DFB19C1E75A002A024D /* DropboxSimpleOAuthViewController.m */; };
 		AF862DFF19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */; };
 		AF862E0019C1E75A002A024D /* DropboxSimpleOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */; };
+		AFCD5A9F19CA2D2A009F1BA6 /* DropboxConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AF802A8719C339F800FB2822 /* DropboxConstants.m */; };
 		AFDEBE3919C3570F0021F8EF /* DropboxSimpleOAuthViewControllerXibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDEBE3819C3570F0021F8EF /* DropboxSimpleOAuthViewControllerXibTests.m */; };
 		AFDEBE3F19C357760021F8EF /* NSLayoutConstraint+TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDEBE3C19C357760021F8EF /* NSLayoutConstraint+TestUtils.m */; };
 		AFDEBE4019C357760021F8EF /* UIAlertView+TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDEBE3E19C357760021F8EF /* UIAlertView+TestUtils.m */; };
@@ -485,6 +486,7 @@
 				AFDEBE3F19C357760021F8EF /* NSLayoutConstraint+TestUtils.m in Sources */,
 				AFFB0E0119C7F4100037577F /* DropboxLoginManager.m in Sources */,
 				AFFB0E0619C7FD5C0037577F /* FakeDropboxLoginManager.m in Sources */,
+				AFCD5A9F19CA2D2A009F1BA6 /* DropboxConstants.m in Sources */,
 				AFFB0E0F19C805CA0037577F /* JustAViewController.m in Sources */,
 				AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m in Sources */,
 				AFFB0DF919C7E9A60037577F /* DropboxLoginUtils.m in Sources */,
