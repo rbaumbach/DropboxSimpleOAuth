@@ -27,7 +27,7 @@ A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app
 * Create an instance of `DropboxSimpleOAuthViewController` and pass in an [Dropbox app key, app secret, client callback URL](https://www.dropbox.com/developers) and completion block to be executed with `DropboxLoginResponse` and `NSError` arguments.
 * Once the instance of `DropboxSimpleOAuthViewController` is presented (either as a modal or pushed on the navigation stack), it will allow the user to login.  After the user logs in, the completion block given in the initialization of the view controller will be executed.  The argument in the completion block, `DropboxLoginResponse`, contains an accessToken and other login information for the authenticated user provided by [Dropbox API Response](https://www.dropbox.com/developers/core/docs#oa2-token).  If there is an issue attempting to authenticate, an error will be given instead.
 * By default, if there are issues with authentication, an UIAlertView will be given to the user.  To disable this, and rely on the NSError directly, set the property `shouldShowErrorAlert` to NO.
-* Note: Even though an instance of the view controller itself can be initalized without client ID, client secret, client callback and completion block (to help with testing), this data must be set using the view controller's properties before it is presented to the user.
+* Note: Even though an instance of the view controller itself can be initalized without app key, app secret, client callback and completion block (to help with testing), this data must be set using the view controller's properties before it is presented to the user.
 
 ### Example Usage
 
