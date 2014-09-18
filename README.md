@@ -39,7 +39,7 @@ DropboxSimpleOAuthViewController
                                                                      appSecret:@"shhhhhh, I'm a secret"
                                                                    callbackURL:[NSURL URLWithString:@"http://your.fancy.site"]
                                                                     completion:^(DropboxLoginResponse *response, NSError *error) {
-                                                                        NSLog(@"My OAuth Token is: %@", response.accessToken);
+                                                                        NSLog(@"My Access Token is: %@", response.accessToken);
                                                                     }];
 [self.navigationController pushViewController:viewController
                                      animated:YES];
