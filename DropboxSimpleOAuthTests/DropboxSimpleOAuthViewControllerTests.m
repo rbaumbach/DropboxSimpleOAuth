@@ -4,26 +4,25 @@
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <SimpleOAuth2/SimpleOAuth2.h>
 #import "UIAlertView+TestUtils.h"
-#import "FakeAFHTTPSessionManager.h"
+#import "FakeSimpleOAuth2AuthenticationManager.h"
 #import "DropboxSimpleOAuth.h"
-#import "DropboxLoginUtils.h"
-#import "DropboxLoginmanager.h"
-#import "FakeDropboxLoginManager.h"
+#import "FakeDropboxOAuthResponse.h"
 
 
 @interface DropboxSimpleOAuthViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *dropboxWebView;
-@property (strong, nonatomic) DropboxLoginManager *loginManager;
-@property (strong, nonatomic) DropboxLoginUtils *dropboxLoginUtils;
+@property (strong, nonatomic) SimpleOAuth2AuthenticationManager *simpleOAuth2AuthenticationManager;
+@property (strong, nonatomic) NSURLRequest *webLoginRequestBuilder;
+
 @end
 
 SpecBegin(DropboxSimpleOAuthViewControllerTests)
 
 describe(@"DropboxSimpleOAuthViewController", ^{
     __block DropboxSimpleOAuthViewController *controller;
-    __block id fakeLoginUtils;
     __block NSURL *callbackURL;
     __block DropboxLoginResponse *retLoginResponse;
     __block NSError *retError;
@@ -78,23 +77,19 @@ describe(@"DropboxSimpleOAuthViewController", ^{
         expect(conformsToWebViewDelegateProtocol).to.equal(YES);
     });
     
-    it(@"has an DropboxLoginManager", ^{
-        expect(controller.loginManager).to.beInstanceOf([DropboxLoginManager class]);
-        expect(controller.loginManager.appKey).to.equal(@"los-llaves");
-        expect(controller.loginManager.appSecret).to.equal(@"unodostres");
-        expect(controller.loginManager.callbackURL).to.equal(controller.callbackURL);
+    it(@"has a SimpleOAuth2AuthenticationManager", ^{
+        expect(controller.simpleOAuth2AuthenticationManager).to.beInstanceOf([SimpleOAuth2AuthenticationManager class]);
     });
     
-    it(@"has an DropboxLoginUtils", ^{
-        expect(controller.dropboxLoginUtils).to.beInstanceOf([DropboxLoginUtils class]);
-        expect(controller.dropboxLoginUtils.appKey).to.equal(@"los-llaves");
-        expect(controller.dropboxLoginUtils.callbackURL).to.equal(callbackURL);
+    it(@"has a webRequestBuiler", ^{
+        expect(controller.webLoginRequestBuilder).to.beInstanceOf([NSURLRequest class]);
     });
     
     describe(@"#viewDidAppear", ^{
         __block Swizzlean *superSwizz;
         __block BOOL isSuperCalled;
         __block BOOL retAnimated;
+        __block id hudClassMethodMock;
         __block UIWebView *fakeWebView;
         __block id fakeLoginRequest;
         
@@ -108,15 +103,16 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             
             [controller view];
             
+            hudClassMethodMock = OCMClassMock([MBProgressHUD class]);
+            
             fakeWebView = OCMClassMock([UIWebView class]);
             controller.dropboxWebView = fakeWebView;
             
             fakeLoginRequest = OCMClassMock([NSURLRequest class]);
+            controller.webLoginRequestBuilder = fakeLoginRequest;
             
-            fakeLoginUtils = OCMClassMock([DropboxLoginUtils class]);
-            controller.dropboxLoginUtils = fakeLoginUtils;
-            OCMStub([controller.dropboxLoginUtils buildLoginRequest]).andReturn(fakeLoginRequest);
-            
+            NSURL *expectedLoginURL = [NSURL URLWithString:@"https://www.dropbox.com/1/oauth2/authorize?client_id=los-llaves&response_type=code&redirect_uri=http://Delta-Tau-Chi.ios"];
+            OCMStub([fakeLoginRequest buildWebLoginRequestWithURL:expectedLoginURL permissionScope:nil]).andReturn(fakeLoginRequest);
             
             [controller viewDidAppear:YES];
         });
@@ -126,10 +122,12 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             expect(isSuperCalled).to.beTruthy();
         });
         
-        describe(@"dropboxWebView", ^{
-            it(@"loads the login using the login request", ^{
-                OCMVerify([fakeWebView loadRequest:fakeLoginRequest]);
-            });
+        it(@"displays Progress HUD", ^{
+            OCMVerify([hudClassMethodMock showHUDAddedTo:controller.view animated:YES]);
+        });
+        
+        it(@"loads the login using the login request", ^{
+            OCMVerify([fakeWebView loadRequest:fakeLoginRequest]);
         });
     });
     
@@ -138,7 +136,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             __block id hudClassMethodMock;
             __block BOOL shouldStartLoad;
             __block id fakeURLRequest;
-            __block FakeDropboxLoginManager *fakeLoginManager;
+            __block FakeSimpleOAuth2AuthenticationManager *fakeAuthManager;
             
             beforeEach(^{
                 hudClassMethodMock = OCMClassMock([MBProgressHUD class]);
@@ -147,34 +145,37 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             context(@"request contains dropbox callback URL as the URL Prefix with code param", ^{
                 beforeEach(^{
                     fakeURLRequest = OCMClassMock([NSURLRequest class]);
+                    OCMStub([fakeURLRequest oAuth2AuthorizationCode]).andReturn(@"authorization-sir");
                     
-                    fakeLoginUtils = OCMClassMock([DropboxLoginUtils class]);
-                    controller.dropboxLoginUtils = fakeLoginUtils;
-                    OCMStub([controller.dropboxLoginUtils requestHasAuthCode:fakeURLRequest]).andReturn(YES);
-                    OCMStub([controller.dropboxLoginUtils authCodeFromRequest:fakeURLRequest]).andReturn(@"authorization-sir");
-                    
-                    fakeLoginManager = [[FakeDropboxLoginManager alloc] init];
-                    controller.loginManager = fakeLoginManager;
+                    fakeAuthManager = [[FakeSimpleOAuth2AuthenticationManager alloc] init];
+                    controller.simpleOAuth2AuthenticationManager = fakeAuthManager;
                     
                     shouldStartLoad = [controller webView:nil
                                shouldStartLoadWithRequest:fakeURLRequest
                                            navigationType:UIWebViewNavigationTypeFormSubmitted];
                 });
                 
-                it(@"displays Progress HUD", ^{
-                    OCMVerify([hudClassMethodMock showHUDAddedTo:controller.view animated:YES]);
-                });
-                
                 it(@"attempts to authenticate with dropbox with authCode", ^{
-                    expect(fakeLoginManager.authCode).to.equal(@"authorization-sir");
+                    expect(fakeAuthManager.authURL).to.equal([NSURL URLWithString:@"https://www.dropbox.com/1/oauth2/token"]);
                 });
                 
+                it(@"attempts to authenticate with dropbox with proper authorization token parameters", ^{
+                    NSDictionary *expectedTokenParams = @{ @"client_id"     : @"los-llaves",
+                                                           @"client_secret" : @"unodostres",
+                                                           @"grant_type"    : @"authorization_code",
+                                                           @"redirect_uri"  : @"http://Delta-Tau-Chi.ios",
+                                                           @"code"          : @"authorization-sir"
+                                                         };
+                    
+                    expect(fakeAuthManager.tokenParameters).to.equal(expectedTokenParams);
+                });
+
                 context(@"successfully gets auth token from Dropbox", ^{
                     __block id partialMock;
-                    __block id fakeDropboxLoginResponse;
+                    __block id fakeDropboxResponse;
                     
                     beforeEach(^{
-                        fakeDropboxLoginResponse = OCMClassMock([DropboxLoginResponse class]);
+                        fakeDropboxResponse = [FakeDropboxOAuthResponse response];
                     });
                     
                     context(@"has a navigation controlller", ^{
@@ -182,13 +183,15 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
                             partialMock = OCMPartialMock(navigationController);
                             
-                            if (fakeLoginManager.success) {
-                                fakeLoginManager.success(fakeDropboxLoginResponse);
+                            if (fakeAuthManager.success) {
+                                fakeAuthManager.success(fakeDropboxResponse);
                             }
                         });
                         
                         it(@"calls completion with dropbox login response", ^{
-                            expect(retLoginResponse).to.equal(fakeDropboxLoginResponse);
+                            expect(retLoginResponse.accessToken).to.equal(@"Video-Arcade-Token");
+                            expect(retLoginResponse.tokenType).to.equal(@"type0");
+                            expect(retLoginResponse.uid).to.equal(@"some-dudes-id-1001");
                         });
                         
                         it(@"pops itself off the navigation controller", ^{
@@ -200,18 +203,20 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                                                                 animated:YES]);
                         });
                     });
-                    
+
                     context(@"does NOT have a navigation controller", ^{
                         beforeEach(^{
                             partialMock = OCMPartialMock(controller);
                             
-                            if (fakeLoginManager.success) {
-                                fakeLoginManager.success(fakeDropboxLoginResponse);
+                            if (fakeAuthManager.success) {
+                                fakeAuthManager.success(fakeDropboxResponse);
                             }
                         });
                         
                         it(@"calls completion with dropbox login response", ^{
-                            expect(retLoginResponse).to.equal(fakeDropboxLoginResponse);
+                            expect(retLoginResponse.accessToken).to.equal(@"Video-Arcade-Token");
+                            expect(retLoginResponse.tokenType).to.equal(@"type0");
+                            expect(retLoginResponse.uid).to.equal(@"some-dudes-id-1001");
                         });
                         
                         it(@"pops itself off the navigation controller", ^{
@@ -224,7 +229,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         });
                     });
                 });
-                
+
                 context(@"failure while attempting to get auth token from Dropbox", ^{
                     __block id partialMock;
                     __block NSError *bogusError;
@@ -245,7 +250,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             expect(errorAlert.message).to.equal(@"bogusDomain - boooogussss");
                         });
                     });
-                    
+
                     context(@"shouldShowErrorAlert == NO", ^{
                         beforeEach(^{
                             controller.shouldShowErrorAlert = NO;
@@ -257,14 +262,14 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             expect(errorAlert).to.beNil();
                         });
                     });
-                    
+
                     context(@"has a navigation controlller", ^{
                         beforeEach(^{
                             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
                             partialMock = OCMPartialMock(navigationController);
                             
-                            if (fakeLoginManager.failure) {
-                                fakeLoginManager.failure(bogusError);
+                            if (fakeAuthManager.failure) {
+                                fakeAuthManager.failure(bogusError);
                             }
                         });
                         
@@ -290,8 +295,8 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         beforeEach(^{
                             partialMock = OCMPartialMock(controller);
                             
-                            if (fakeLoginManager.failure) {
-                                fakeLoginManager.failure(bogusError);
+                            if (fakeAuthManager.failure) {
+                                fakeAuthManager.failure(bogusError);
                             }
                         });
                         
@@ -313,7 +318,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         });
                     });
                 });
-                
+
                 it(@"returns NO", ^{
                     expect(shouldStartLoad).to.beFalsy();
                 });
@@ -322,11 +327,8 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             context(@"request does NOT contain dropbox callback URL", ^{
                 beforeEach(^{
                     fakeURLRequest = OCMClassMock([NSURLRequest class]);
-                    
-                    fakeLoginUtils = OCMClassMock([DropboxLoginUtils class]);
-                    controller.dropboxLoginUtils = fakeLoginUtils;
-                    OCMStub([controller.dropboxLoginUtils requestHasAuthCode:fakeURLRequest]).andReturn(NO);
-                    
+                    OCMStub([fakeURLRequest oAuth2AuthorizationCode]).andReturn(nil);
+
                     shouldStartLoad = [controller webView:nil
                                shouldStartLoadWithRequest:fakeURLRequest
                                            navigationType:UIWebViewNavigationTypeFormSubmitted];
@@ -351,7 +353,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                                                     animated:YES]);
             });
         });
-        
+
         describe(@"#webView:didFailLoadWithError:", ^{
             __block id hudClassMethodMock;
             __block NSError *bogusRequestError;

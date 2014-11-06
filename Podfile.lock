@@ -25,6 +25,8 @@ PODS:
   - OCMock (3.0.2)
   - RealFakes (0.0.3):
     - AFNetworking (~> 2.0)
+  - SimpleOAuth2 (0.0.1):
+    - AFNetworking (~> 2.0)
   - Specta (0.3.0.beta1)
   - Swizzlean (0.2.0)
 
@@ -34,6 +36,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9)
   - OCMock (~> 3.0.2)
   - RealFakes
+  - SimpleOAuth2
   - Specta (from `https://github.com/specta/specta.git`, tag `v0.3.0.beta1`)
   - Swizzlean (~> 0.2.0)
 
@@ -48,6 +51,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   OCMock: b9836ab89d8d5e66cbe6333f93857037c310ee62
   RealFakes: 6988e2819e873ff3b31155d8e067b387f2a810cd
+  SimpleOAuth2: d9f6c59cd9c89481e8b01670ec1002a11a2e3a02
   Specta: 63e8ac8e07db6675c7096d37f77a266a1be4c02d
   Swizzlean: dc03ad1d847a3748f456982b7ede4e3bad4a9630
 

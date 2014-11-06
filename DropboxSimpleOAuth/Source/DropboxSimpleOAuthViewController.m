@@ -20,16 +20,26 @@
 //WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <SimpleOAuth2/SimpleOAuth2.h>
 #import "DropboxSimpleOAuthViewController.h"
-#import "DropboxLoginManager.h"
-#import "DropboxLoginUtils.h"
+#import "DropboxConstants.h"
+#import "DropboxLoginResponse.h"
 
+
+NSString *const CodeKey = @"code";
+NSString *const GrantTypeKey = @"grant_type";
+NSString *const GrantTypeValue = @"authorization_code";
+NSString *const ClientIDKey = @"client_id";
+NSString *const ClientSecretKey = @"client_secret";
+NSString *const RedirectURIKey = @"redirect_uri";
+NSString *const DropboxAuthClientIDEndpoint = @"/1/oauth2/authorize?client_id=";
+NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
 
 @interface DropboxSimpleOAuthViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *dropboxWebView;
-@property (strong, nonatomic) DropboxLoginManager *loginManager;
-@property (strong, nonatomic) DropboxLoginUtils *dropboxLoginUtils;
+@property (strong, nonatomic) SimpleOAuth2AuthenticationManager *simpleOAuth2AuthenticationManager;
+@property (strong, nonatomic) NSURLRequest *webLoginRequestBuilder;
 
 @end
 
@@ -49,11 +59,8 @@
         self.callbackURL = callbackURL;
         self.completion = completion;
         self.shouldShowErrorAlert = YES;
-        self.loginManager = [[DropboxLoginManager alloc] initWithAppKey:self.appKey
-                                                              appSecret:self.appSecret
-                                                            callbackURL:self.callbackURL];
-        self.dropboxLoginUtils = [[DropboxLoginUtils alloc] initWithAppKey:self.appKey
-                                                            andCallbackURL:self.callbackURL];
+        self.simpleOAuth2AuthenticationManager = [[SimpleOAuth2AuthenticationManager alloc] init];
+        self.webLoginRequestBuilder = [[NSURLRequest alloc] init];
     }
     return self;
 }
@@ -79,21 +86,28 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 {
-    if ([self.dropboxLoginUtils requestHasAuthCode:request]) {
-        [self showProgressHUD];
+    NSString *authorizationCode = [request oAuth2AuthorizationCode];
+    
+    if (authorizationCode) {
+        NSDictionary *tokenParams = @{ ClientIDKey     : self.appKey,
+                                       ClientSecretKey : self.appSecret,
+                                       GrantTypeKey    : GrantTypeValue,
+                                       RedirectURIKey  : self.callbackURL.absoluteString,
+                                       CodeKey         : authorizationCode };
         
-        NSString *dropboxAuthCode = [self.dropboxLoginUtils authCodeFromRequest:request];
+        NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, @"/1/oauth2/token"];
         
-        [self.loginManager authenticateWithAuthCode:dropboxAuthCode
-                                            success:^(DropboxLoginResponse *dropboxLoginResponse) {
-                                                [self completeAuthWithLoginResponse:dropboxLoginResponse];
-                                            } failure:^(NSError *error) {
-                                                [self completeWithError:error];
-                                            }];
-        
+        [self.simpleOAuth2AuthenticationManager authenticateOAuthClient:[NSURL URLWithString:authenticationURLString]
+                                                        tokenParameters:tokenParams
+                                                                success:^(id authResponseObject) {
+                                                                    DropboxLoginResponse *loginResponse = [[DropboxLoginResponse alloc] initWithDropboxOAuthResponse:authResponseObject];
+                                                                    [self completeAuthWithLoginResponse:loginResponse];
+                                                                } failure:^(NSError *error) {
+                                                                    [self completeWithError:error];
+                                                                }];
         return NO;
     }
-    
+
     return YES;
 }
 
@@ -123,8 +137,18 @@
 {
     [self showProgressHUD];
     
-    NSURLRequest *loginRequest = [self.dropboxLoginUtils buildLoginRequest];
-    [self.dropboxWebView loadRequest:loginRequest];
+    NSString *loginURLString = [NSString stringWithFormat:@"%@%@%@%@%@",
+                                @"https://www.dropbox.com",
+                                DropboxAuthClientIDEndpoint,
+                                self.appKey,
+                                DropboxAuthRequestParams,
+                                self.callbackURL.absoluteString];
+    
+    NSURL *loginURL = [NSURL URLWithString:loginURLString];
+    NSURLRequest *requestBuilder = [self.webLoginRequestBuilder buildWebLoginRequestWithURL:loginURL
+                                                                            permissionScope:nil];
+    
+    [self.dropboxWebView loadRequest:requestBuilder];
 }
 
 - (void)completeAuthWithLoginResponse:(DropboxLoginResponse *)response
