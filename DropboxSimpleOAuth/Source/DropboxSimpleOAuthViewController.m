@@ -33,7 +33,11 @@ NSString *const ClientIDKey = @"client_id";
 NSString *const ClientSecretKey = @"client_secret";
 NSString *const RedirectURIKey = @"redirect_uri";
 NSString *const DropboxAuthClientIDEndpoint = @"/1/oauth2/authorize?client_id=";
+NSString *const DropboxTokenEndpoint = @"/1/oauth2/token";
 NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
+NSString *const NSLocalizedDescriptionKey = @"NSLocalizedDescription";
+NSString *const DropboxLoginErrorAlertTitle = @"Dropbox Login Error";
+NSString *const DropboxLoginCancelButtonTitle = @"OK";
 
 @interface DropboxSimpleOAuthViewController () <UIWebViewDelegate>
 
@@ -93,9 +97,10 @@ NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
                                        ClientSecretKey : self.appSecret,
                                        GrantTypeKey    : GrantTypeValue,
                                        RedirectURIKey  : self.callbackURL.absoluteString,
-                                       CodeKey         : authorizationCode };
+                                       CodeKey         : authorizationCode
+                                     };
         
-        NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, @"/1/oauth2/token"];
+        NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, DropboxTokenEndpoint];
         
         [self.simpleOAuth2AuthenticationManager authenticateOAuthClient:[NSURL URLWithString:authenticationURLString]
                                                         tokenParameters:tokenParams
@@ -138,7 +143,7 @@ NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
     [self showProgressHUD];
     
     NSString *loginURLString = [NSString stringWithFormat:@"%@%@%@%@%@",
-                                @"https://www.dropbox.com",
+                                DropboxAuthURL,
                                 DropboxAuthClientIDEndpoint,
                                 self.appKey,
                                 DropboxAuthRequestParams,
@@ -183,12 +188,12 @@ NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
 
 - (void)showErrorAlert:(NSError *)error
 {
-    NSString *errorMessage = [NSString stringWithFormat:@"%@ - %@", error.domain, error.userInfo[@"NSLocalizedDescription"]];
+    NSString *errorMessage = [NSString stringWithFormat:@"%@ - %@", error.domain, error.userInfo[NSLocalizedDescriptionKey]];
     
-    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Dropbox Login Error"
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:DropboxLoginErrorAlertTitle
                                                          message:errorMessage
                                                         delegate:nil
-                                               cancelButtonTitle:@"OK"
+                                               cancelButtonTitle:DropboxLoginCancelButtonTitle
                                                otherButtonTitles:nil];
     [errorAlert show];
 }
