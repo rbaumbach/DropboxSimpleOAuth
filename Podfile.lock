@@ -31,7 +31,6 @@ PODS:
   - Swizzlean (0.2.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.0)
   - Expecta (~> 0.2.1)
   - MBProgressHUD (~> 0.9)
   - OCMock (~> 3.0.2)
