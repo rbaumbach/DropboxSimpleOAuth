@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7883E6D3C8E142E9A5E9269B /* libPods-DropboxSimpleOAuthTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 562C3573EA4447939B14931B /* libPods-DropboxSimpleOAuthTests.a */; };
+		AF149FB31A0D1A3500B5593A /* DropboxTokenParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = AF149FB21A0D1A3500B5593A /* DropboxTokenParameters.m */; };
+		AF149FB41A0D1A3500B5593A /* DropboxTokenParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = AF149FB21A0D1A3500B5593A /* DropboxTokenParameters.m */; };
 		AF247CD019BDEFF500AF94CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF247CCF19BDEFF500AF94CE /* Foundation.framework */; };
 		AF247CD219BDEFF500AF94CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF247CD119BDEFF500AF94CE /* CoreGraphics.framework */; };
 		AF247CD419BDEFF500AF94CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF247CD319BDEFF500AF94CE /* UIKit.framework */; };
@@ -61,6 +63,8 @@
 		62933D31F06BA074C88A4D65 /* Pods-DropboxSimpleOAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropboxSimpleOAuth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DropboxSimpleOAuth/Pods-DropboxSimpleOAuth.debug.xcconfig"; sourceTree = "<group>"; };
 		6BA453809F4489DD94C64D2B /* Pods-DropboxSimpleOAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropboxSimpleOAuth.release.xcconfig"; path = "Pods/Target Support Files/Pods-DropboxSimpleOAuth/Pods-DropboxSimpleOAuth.release.xcconfig"; sourceTree = "<group>"; };
 		7C1CDE9ED4030D892552C530 /* Pods-DropboxSimpleOAuthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropboxSimpleOAuthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DropboxSimpleOAuthTests/Pods-DropboxSimpleOAuthTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF149FB11A0D1A3500B5593A /* DropboxTokenParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxTokenParameters.h; path = Source/DropboxTokenParameters.h; sourceTree = "<group>"; };
+		AF149FB21A0D1A3500B5593A /* DropboxTokenParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxTokenParameters.m; path = Source/DropboxTokenParameters.m; sourceTree = "<group>"; };
 		AF247CCC19BDEFF500AF94CE /* DropboxSimpleOAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropboxSimpleOAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF247CCF19BDEFF500AF94CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF247CD119BDEFF500AF94CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +194,8 @@
 				AF862DFC19C1E75A002A024D /* DropboxSimpleOAuthViewController.xib */,
 				AF2B47AE19C72C6C00BC0F3B /* DropboxLoginResponse.h */,
 				AF2B47AF19C72C6C00BC0F3B /* DropboxLoginResponse.m */,
+				AF149FB11A0D1A3500B5593A /* DropboxTokenParameters.h */,
+				AF149FB21A0D1A3500B5593A /* DropboxTokenParameters.m */,
 				AF862DF419C1E5F9002A024D /* AppCode */,
 			);
 			path = DropboxSimpleOAuth;
@@ -459,6 +465,7 @@
 				AF247CE019BDEFF500AF94CE /* AppDelegate.m in Sources */,
 				AFFB0E0E19C805CA0037577F /* JustAViewController.m in Sources */,
 				AF862DFD19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */,
+				AF149FB31A0D1A3500B5593A /* DropboxTokenParameters.m in Sources */,
 				AF862DF819C1E6B8002A024D /* MainViewController.m in Sources */,
 				AF802A8819C339F800FB2822 /* DropboxConstants.m in Sources */,
 				AF247CDC19BDEFF500AF94CE /* main.m in Sources */,
@@ -480,6 +487,7 @@
 				AFFB0E0F19C805CA0037577F /* JustAViewController.m in Sources */,
 				AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m in Sources */,
 				AFDEBE4019C357760021F8EF /* UIAlertView+TestUtils.m in Sources */,
+				AF149FB41A0D1A3500B5593A /* DropboxTokenParameters.m in Sources */,
 				AF862DFE19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,8 @@
 	<string>DropboxSimpleOAuth</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>BCD84079E4DB6169FBA829D069D28DD52105A74F</key>
+		<string>github.com:rbaumbach/SimpleOAuth2.git</string>
 		<key>D8256A45CE81959F88EA9FFBF162D248C5313DD1</key>
 		<string>ssh://github.com/rbaumbach/DropboxSimpleOAuth.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>DropboxSimpleOAuth.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>BCD84079E4DB6169FBA829D069D28DD52105A74F</key>
+		<string>../../SimpleOAuth2</string>
 		<key>D8256A45CE81959F88EA9FFBF162D248C5313DD1</key>
 		<string>..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>D8256A45CE81959F88EA9FFBF162D248C5313DD1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DropboxSimpleOAuth</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BCD84079E4DB6169FBA829D069D28DD52105A74F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SimpleOAuth2</string>
 		</dict>
 	</array>
 </dict>

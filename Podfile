@@ -5,7 +5,7 @@ inhibit_all_warnings!
 
 target "DropboxSimpleOAuth" do
     pod 'MBProgressHUD', '~> 0.9'
-    pod 'SimpleOAuth2'
+    pod 'SimpleOAuth2', '0.0.2'
 end
 
 target "DropboxSimpleOAuthTests" do

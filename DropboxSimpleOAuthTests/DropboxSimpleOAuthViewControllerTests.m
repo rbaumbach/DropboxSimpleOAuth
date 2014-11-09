@@ -8,6 +8,7 @@
 #import "UIAlertView+TestUtils.h"
 #import "FakeSimpleOAuth2AuthenticationManager.h"
 #import "DropboxSimpleOAuth.h"
+#import "DropboxTokenParameters.h"
 #import "FakeDropboxOAuthResponse.h"
 
 
@@ -160,14 +161,11 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                 });
                 
                 it(@"attempts to authenticate with dropbox with proper authorization token parameters", ^{
-                    NSDictionary *expectedTokenParams = @{ @"client_id"     : @"los-llaves",
-                                                           @"client_secret" : @"unodostres",
-                                                           @"grant_type"    : @"authorization_code",
-                                                           @"redirect_uri"  : @"http://Delta-Tau-Chi.ios",
-                                                           @"code"          : @"authorization-sir"
-                                                         };
-                    
-                    expect(fakeAuthManager.tokenParameters).to.equal(expectedTokenParams);
+                    DropboxTokenParameters *tokenParams = (DropboxTokenParameters *)fakeAuthManager.tokenParameters;
+                    expect(tokenParams.appKey).to.equal(@"los-llaves");
+                    expect(tokenParams.appSecret).to.equal(@"unodostres");
+                    expect(tokenParams.callbackURLString).to.equal(@"http://Delta-Tau-Chi.ios");
+                    expect(tokenParams.authorizationCode).to.equal(@"authorization-sir");
                 });
 
                 context(@"successfully gets auth token from Dropbox", ^{

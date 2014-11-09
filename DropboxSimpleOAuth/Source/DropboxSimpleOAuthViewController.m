@@ -24,14 +24,9 @@
 #import "DropboxSimpleOAuthViewController.h"
 #import "DropboxConstants.h"
 #import "DropboxLoginResponse.h"
+#import "DropboxTokenParameters.h"
 
 
-NSString *const CodeKey = @"code";
-NSString *const GrantTypeKey = @"grant_type";
-NSString *const GrantTypeValue = @"authorization_code";
-NSString *const ClientIDKey = @"client_id";
-NSString *const ClientSecretKey = @"client_secret";
-NSString *const RedirectURIKey = @"redirect_uri";
 NSString *const DropboxAuthClientIDEndpoint = @"/1/oauth2/authorize?client_id=";
 NSString *const DropboxTokenEndpoint = @"/1/oauth2/token";
 NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
@@ -93,14 +88,13 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
     NSString *authorizationCode = [request oAuth2AuthorizationCode];
     
     if (authorizationCode) {
-        NSDictionary *tokenParams = @{ ClientIDKey     : self.appKey,
-                                       ClientSecretKey : self.appSecret,
-                                       GrantTypeKey    : GrantTypeValue,
-                                       RedirectURIKey  : self.callbackURL.absoluteString,
-                                       CodeKey         : authorizationCode
-                                     };
-        
         NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, DropboxTokenEndpoint];
+        
+        DropboxTokenParameters *tokenParams = [[DropboxTokenParameters alloc] init];
+        tokenParams.appKey = self.appKey;
+        tokenParams.appSecret = self.appSecret;
+        tokenParams.callbackURLString = self.callbackURL.absoluteString;
+        tokenParams.authorizationCode = authorizationCode;
         
         [self.simpleOAuth2AuthenticationManager authenticateOAuthClient:[NSURL URLWithString:authenticationURLString]
                                                         tokenParameters:tokenParams

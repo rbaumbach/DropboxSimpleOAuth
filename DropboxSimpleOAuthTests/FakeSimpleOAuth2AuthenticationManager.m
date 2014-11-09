@@ -4,7 +4,7 @@
 @implementation FakeSimpleOAuth2AuthenticationManager
 
 - (void)authenticateOAuthClient:(NSURL *)authURL
-                tokenParameters:(NSDictionary *)tokenParameters
+                tokenParameters:(id<TokenParameters>)tokenParameters
                         success:(void (^)(id authResponseObject))success
                         failure:(void (^)(NSError *error))failure
 {
