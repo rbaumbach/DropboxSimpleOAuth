@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name                  = 'DropboxSimpleOAuth'
-  s.version               = '0.0.1'
+  s.version               = '0.0.2'
   s.summary               = 'A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app.'
   s.homepage              = 'https://github.com/rbaumbach/DropboxSimpleOAuth'
-  s.license               = { :type => 'MIT', :file => 'MIT.LICENSE' }
+  s.license               = { :type => 'MIT', :file => 'MIT-LICENSE.txt' }
   s.author                = { 'Ryan Baumbach' => 'rbaumbach.github@gmail.com' }
   s.source                = { :git => 'https://github.com/rbaumbach/DropboxSimpleOAuth.git', :tag => s.version.to_s }
   s.requires_arc          = true
