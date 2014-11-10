@@ -25,6 +25,7 @@
 #import "DropboxConstants.h"
 #import "DropboxLoginResponse.h"
 #import "DropboxTokenParameters.h"
+#import "DropboxAuthenticationManager.h"
 
 
 NSString *const DropboxAuthClientIDEndpoint = @"/1/oauth2/authorize?client_id=";
@@ -37,7 +38,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 @interface DropboxSimpleOAuthViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *dropboxWebView;
-@property (strong, nonatomic) SimpleOAuth2AuthenticationManager *simpleOAuth2AuthenticationManager;
+@property (strong, nonatomic) DropboxAuthenticationManager *dropboxAuthenticationManager;
 @property (strong, nonatomic) NSURLRequest *webLoginRequestBuilder;
 
 @end
@@ -58,7 +59,9 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
         self.callbackURL = callbackURL;
         self.completion = completion;
         self.shouldShowErrorAlert = YES;
-        self.simpleOAuth2AuthenticationManager = [[SimpleOAuth2AuthenticationManager alloc] init];
+        self.dropboxAuthenticationManager = [[DropboxAuthenticationManager alloc] initWithAppKey:self.appKey
+                                                                                       appSecret:self.appSecret
+                                                                               callbackURLString:self.callbackURL.absoluteString];
         self.webLoginRequestBuilder = [[NSURLRequest alloc] init];
     }
     return self;
@@ -88,22 +91,12 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
     NSString *authorizationCode = [request oAuth2AuthorizationCode];
     
     if (authorizationCode) {
-        NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, DropboxTokenEndpoint];
-        
-        DropboxTokenParameters *tokenParams = [[DropboxTokenParameters alloc] init];
-        tokenParams.appKey = self.appKey;
-        tokenParams.appSecret = self.appSecret;
-        tokenParams.callbackURLString = self.callbackURL.absoluteString;
-        tokenParams.authorizationCode = authorizationCode;
-        
-        [self.simpleOAuth2AuthenticationManager authenticateOAuthClient:[NSURL URLWithString:authenticationURLString]
-                                                        tokenParameters:tokenParams
-                                                                success:^(id authResponseObject) {
-                                                                    DropboxLoginResponse *loginResponse = [[DropboxLoginResponse alloc] initWithDropboxOAuthResponse:authResponseObject];
-                                                                    [self completeAuthWithLoginResponse:loginResponse];
-                                                                } failure:^(NSError *error) {
-                                                                    [self completeWithError:error];
-                                                                }];
+        [self.dropboxAuthenticationManager authenticateClientWithAuthCode:authorizationCode
+                                                                  success:^(DropboxLoginResponse *reponse) {
+                                                                      [self completeAuthWithLoginResponse:reponse];
+                                                                  } failure:^(NSError *error) {
+                                                                      [self completeWithError:error];
+                                                                  }];
         return NO;
     }
 

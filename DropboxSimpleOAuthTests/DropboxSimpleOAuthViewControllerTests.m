@@ -6,17 +6,26 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SimpleOAuth2/SimpleOAuth2.h>
 #import "UIAlertView+TestUtils.h"
-#import "FakeSimpleOAuth2AuthenticationManager.h"
+#import "FakeDropboxAuthenticationManager.h"
 #import "DropboxSimpleOAuth.h"
 #import "DropboxTokenParameters.h"
 #import "FakeDropboxOAuthResponse.h"
+#import "DropboxAuthenticatioNManager.h"
 
 
 @interface DropboxSimpleOAuthViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *dropboxWebView;
-@property (strong, nonatomic) SimpleOAuth2AuthenticationManager *simpleOAuth2AuthenticationManager;
+@property (strong, nonatomic) DropboxAuthenticationManager *dropboxAuthenticationManager;
 @property (strong, nonatomic) NSURLRequest *webLoginRequestBuilder;
+
+@end
+
+@interface DropboxAuthenticationManager ()
+
+@property (copy, nonatomic) NSString *appKey;
+@property (copy, nonatomic) NSString *appSecret;
+@property (copy, nonatomic) NSString *callbackURLString;
 
 @end
 
@@ -78,8 +87,11 @@ describe(@"DropboxSimpleOAuthViewController", ^{
         expect(conformsToWebViewDelegateProtocol).to.equal(YES);
     });
     
-    it(@"has a SimpleOAuth2AuthenticationManager", ^{
-        expect(controller.simpleOAuth2AuthenticationManager).to.beInstanceOf([SimpleOAuth2AuthenticationManager class]);
+    it(@"has a DropboxAuthenticationManager", ^{
+        expect(controller.dropboxAuthenticationManager).to.beInstanceOf([DropboxAuthenticationManager class]);
+        expect(controller.dropboxAuthenticationManager.appKey).to.equal(@"los-llaves");
+        expect(controller.dropboxAuthenticationManager.appSecret).to.equal(@"unodostres");
+        expect(controller.dropboxAuthenticationManager.callbackURLString).to.equal(@"http://Delta-Tau-Chi.ios");
     });
     
     it(@"has a webRequestBuiler", ^{
@@ -137,7 +149,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             __block id hudClassMethodMock;
             __block BOOL shouldStartLoad;
             __block id fakeURLRequest;
-            __block FakeSimpleOAuth2AuthenticationManager *fakeAuthManager;
+            __block FakeDropboxAuthenticationManager *fakeAuthManager;
             
             beforeEach(^{
                 hudClassMethodMock = OCMClassMock([MBProgressHUD class]);
@@ -148,8 +160,8 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     fakeURLRequest = OCMClassMock([NSURLRequest class]);
                     OCMStub([fakeURLRequest oAuth2AuthorizationCode]).andReturn(@"authorization-sir");
                     
-                    fakeAuthManager = [[FakeSimpleOAuth2AuthenticationManager alloc] init];
-                    controller.simpleOAuth2AuthenticationManager = fakeAuthManager;
+                    fakeAuthManager = [[FakeDropboxAuthenticationManager alloc] init];
+                    controller.dropboxAuthenticationManager = fakeAuthManager;
                     
                     shouldStartLoad = [controller webView:nil
                                shouldStartLoadWithRequest:fakeURLRequest
@@ -157,15 +169,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                 });
                 
                 it(@"attempts to authenticate with dropbox with authCode", ^{
-                    expect(fakeAuthManager.authURL).to.equal([NSURL URLWithString:@"https://www.dropbox.com/1/oauth2/token"]);
-                });
-                
-                it(@"attempts to authenticate with dropbox with proper authorization token parameters", ^{
-                    DropboxTokenParameters *tokenParams = (DropboxTokenParameters *)fakeAuthManager.tokenParameters;
-                    expect(tokenParams.appKey).to.equal(@"los-llaves");
-                    expect(tokenParams.appSecret).to.equal(@"unodostres");
-                    expect(tokenParams.callbackURLString).to.equal(@"http://Delta-Tau-Chi.ios");
-                    expect(tokenParams.authorizationCode).to.equal(@"authorization-sir");
+                    expect(fakeAuthManager.authCode).to.equal(@"authorization-sir");
                 });
 
                 context(@"successfully gets auth token from Dropbox", ^{
@@ -173,7 +177,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     __block id fakeDropboxResponse;
                     
                     beforeEach(^{
-                        fakeDropboxResponse = [FakeDropboxOAuthResponse response];
+                        fakeDropboxResponse = OCMClassMock([DropboxLoginResponse class]);
                     });
                     
                     context(@"has a navigation controlller", ^{
@@ -187,9 +191,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         });
                         
                         it(@"calls completion with dropbox login response", ^{
-                            expect(retLoginResponse.accessToken).to.equal(@"Video-Arcade-Token");
-                            expect(retLoginResponse.tokenType).to.equal(@"type0");
-                            expect(retLoginResponse.uid).to.equal(@"some-dudes-id-1001");
+                            expect(retLoginResponse).to.equal(fakeDropboxResponse);
                         });
                         
                         it(@"pops itself off the navigation controller", ^{
@@ -212,9 +214,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         });
                         
                         it(@"calls completion with dropbox login response", ^{
-                            expect(retLoginResponse.accessToken).to.equal(@"Video-Arcade-Token");
-                            expect(retLoginResponse.tokenType).to.equal(@"type0");
-                            expect(retLoginResponse.uid).to.equal(@"some-dudes-id-1001");
+                            expect(retLoginResponse).to.equal(fakeDropboxResponse);
                         });
                         
                         it(@"pops itself off the navigation controller", ^{

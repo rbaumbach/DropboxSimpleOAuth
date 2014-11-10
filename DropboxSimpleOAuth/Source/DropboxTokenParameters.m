@@ -10,7 +10,7 @@ NSString *const CodeKey = @"code";
 
 @implementation DropboxTokenParameters
 
-#pragma <TokenParameters>
+#pragma mark - <TokenParameters>
 
 - (NSDictionary *)build
 {
