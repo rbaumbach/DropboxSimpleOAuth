@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.resources             = 'DropboxSimpleOAuth/Source/*.xib'
   s.frameworks            = 'Foundation', 'UIKit'
 
-  s.dependency 'AFNetworking', '~> 2.0'
   s.dependency 'MBProgressHUD', '~> 0.9'
+  s.dependency 'SimpleOAuth2', '0.0.2'
 end
