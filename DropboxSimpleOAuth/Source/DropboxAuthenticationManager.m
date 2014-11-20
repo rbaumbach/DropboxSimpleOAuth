@@ -26,7 +26,7 @@
 #import "DropboxTokenParameters.h"
 
 
-NSString *const DropboxTokenEndpointTEMP = @"/1/oauth2/token";
+NSString *const DropboxTokenEndpoint = @"/1/oauth2/token";
 
 @interface DropboxAuthenticationManager ()
 
@@ -61,7 +61,7 @@ NSString *const DropboxTokenEndpointTEMP = @"/1/oauth2/token";
                                success:(void (^)(DropboxLoginResponse *reponse))success
                                failure:(void (^)(NSError *error))failure
 {
-    NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, DropboxTokenEndpointTEMP];
+    NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, DropboxTokenEndpoint];
     
     [self.simpleOAuth2AuthenticationManager authenticateOAuthClient:[NSURL URLWithString:authenticationURLString]
                                                     tokenParameters:[self dropboxTokenParametersFromAuthCode:authCode]

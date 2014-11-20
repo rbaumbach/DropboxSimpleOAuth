@@ -29,7 +29,6 @@
 
 
 NSString *const DropboxAuthClientIDEndpoint = @"/1/oauth2/authorize?client_id=";
-NSString *const DropboxTokenEndpoint = @"/1/oauth2/token";
 NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
 NSString *const NSLocalizedDescriptionKey = @"NSLocalizedDescription";
 NSString *const DropboxLoginErrorAlertTitle = @"Dropbox Login Error";
