@@ -17,7 +17,6 @@
                                                                                 [self displayToken:response.accessToken];
                                                                             }
                                                                         }];
-    
     [self.navigationController pushViewController:viewController
                                          animated:YES];
 }
@@ -30,9 +29,8 @@
                                                          message:[NSString stringWithFormat:@"Your Token is: %@", authToken]
                                                         delegate:nil
                                                cancelButtonTitle:@"OK"
-                                               otherButtonTitles:nil, nil];
+                                               otherButtonTitles:nil];
     [tokenAlert show];
 }
-
 
 @end
