@@ -4,8 +4,8 @@ platform :ios, "7.0"
 inhibit_all_warnings!
 
 target "DropboxSimpleOAuth" do
-    pod 'MBProgressHUD', '~> 0.9'
     pod 'SimpleOAuth2', '0.0.3'
+    pod 'MBProgressHUD', '~> 0.9'
 end
 
 target "DropboxSimpleOAuthTests" do
