@@ -42,8 +42,6 @@
 		AFDEBE3919C3570F0021F8EF /* DropboxSimpleOAuthViewControllerXibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDEBE3819C3570F0021F8EF /* DropboxSimpleOAuthViewControllerXibTests.m */; };
 		AFDEBE3F19C357760021F8EF /* NSLayoutConstraint+TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDEBE3C19C357760021F8EF /* NSLayoutConstraint+TestUtils.m */; };
 		AFDEBE4019C357760021F8EF /* UIAlertView+TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDEBE3E19C357760021F8EF /* UIAlertView+TestUtils.m */; };
-		AFFB0E0519C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0E0419C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m */; };
-		AFFB0E0619C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0E0419C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m */; };
 		AFFB0E0919C802490037577F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFFB0E0819C802490037577F /* README.md */; };
 		AFFB0E0A19C802490037577F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFFB0E0819C802490037577F /* README.md */; };
 		AFFB0E0E19C805CA0037577F /* JustAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB0E0C19C805CA0037577F /* JustAViewController.m */; };
@@ -113,8 +111,6 @@
 		AFDEBE3C19C357760021F8EF /* NSLayoutConstraint+TestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+TestUtils.m"; sourceTree = "<group>"; };
 		AFDEBE3D19C357760021F8EF /* UIAlertView+TestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+TestUtils.h"; sourceTree = "<group>"; };
 		AFDEBE3E19C357760021F8EF /* UIAlertView+TestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+TestUtils.m"; sourceTree = "<group>"; };
-		AFFB0E0319C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSimpleOAuth2AuthenticationManager.h; sourceTree = "<group>"; };
-		AFFB0E0419C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSimpleOAuth2AuthenticationManager.m; sourceTree = "<group>"; };
 		AFFB0E0819C802490037577F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		AFFB0E0B19C805CA0037577F /* JustAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JustAViewController.h; sourceTree = "<group>"; };
 		AFFB0E0C19C805CA0037577F /* JustAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JustAViewController.m; sourceTree = "<group>"; };
@@ -290,8 +286,6 @@
 		AFFB0E0219C7FD3C0037577F /* Real Fakes */ = {
 			isa = PBXGroup;
 			children = (
-				AFFB0E0319C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.h */,
-				AFFB0E0419C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m */,
 				AFD87C081A10823B00C7D6E2 /* FakeDropboxAuthenticationManager.h */,
 				AFD87C091A10823B00C7D6E2 /* FakeDropboxAuthenticationManager.m */,
 			);
@@ -479,7 +473,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFA8E5601A0F30C0002EC3F5 /* DropboxAuthenticationManager.m in Sources */,
-				AFFB0E0519C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m in Sources */,
 				AF247CE019BDEFF500AF94CE /* AppDelegate.m in Sources */,
 				AFFB0E0E19C805CA0037577F /* JustAViewController.m in Sources */,
 				AF862DFD19C1E75A002A024D /* DropboxSimpleOAuthViewController.m in Sources */,
@@ -502,7 +495,6 @@
 				AF2B47AD19C72C1200BC0F3B /* DropboxLoginResponseTests.m in Sources */,
 				AFDEBE3F19C357760021F8EF /* NSLayoutConstraint+TestUtils.m in Sources */,
 				AFC865DA1A1E387B00F35EAC /* DropboxTokenParametersTests.m in Sources */,
-				AFFB0E0619C7FD5C0037577F /* FakeSimpleOAuth2AuthenticationManager.m in Sources */,
 				AFCD5A9F19CA2D2A009F1BA6 /* DropboxConstants.m in Sources */,
 				AFFB0E0F19C805CA0037577F /* JustAViewController.m in Sources */,
 				AF247CFE19BDEFF500AF94CE /* DropboxSimpleOAuthViewControllerTests.m in Sources */,

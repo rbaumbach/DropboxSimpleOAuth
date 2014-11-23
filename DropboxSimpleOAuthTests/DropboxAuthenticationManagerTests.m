@@ -3,8 +3,8 @@
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
 #import <SimpleOAuth2/SimpleOAuth2.h>
+#import <RealFakes/RealFakes.h>
 #import "FakeDropboxOAuthResponse.h"
-#import "FakeSimpleOAuth2AuthenticationManager.h"
 #import "DropboxAuthenticationManager.h"
 #import "DropboxLoginResponse.h"
 #import "DropboxTokenParameters.h"

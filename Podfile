@@ -5,7 +5,7 @@ inhibit_all_warnings!
 
 target "DropboxSimpleOAuth" do
     pod 'MBProgressHUD', '~> 0.9'
-    pod 'SimpleOAuth2', '0.0.2'
+    pod 'SimpleOAuth2', '0.0.3'
 end
 
 target "DropboxSimpleOAuthTests" do
@@ -13,6 +13,6 @@ target "DropboxSimpleOAuthTests" do
     pod 'Expecta', '~> 0.3.1'
     pod 'OCMock', '~> 3.1.1'
     pod 'Swizzlean', '~> 0.2.0'
-    pod 'RealFakes'
+    pod 'RealFakes', '~> 0.0.4'
 end
 
