@@ -38,7 +38,6 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 
 @property (weak, nonatomic) IBOutlet UIWebView *dropboxWebView;
 @property (strong, nonatomic) DropboxAuthenticationManager *dropboxAuthenticationManager;
-@property (strong, nonatomic) NSURLRequest *webLoginRequestBuilder;
 
 @end
 
@@ -61,7 +60,6 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
         self.dropboxAuthenticationManager = [[DropboxAuthenticationManager alloc] initWithAppKey:self.appKey
                                                                                        appSecret:self.appSecret
                                                                                callbackURLString:self.callbackURL.absoluteString];
-        self.webLoginRequestBuilder = [[NSURLRequest alloc] init];
     }
     return self;
 }
@@ -136,7 +134,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
                                 self.callbackURL.absoluteString];
     
     NSURL *loginURL = [NSURL URLWithString:loginURLString];
-    NSURLRequest *requestBuilder = [self.webLoginRequestBuilder buildWebLoginRequestWithURL:loginURL];
+    NSURLRequest *requestBuilder = [NSURLRequest buildWebLoginRequestWithURL:loginURL];
     
     [self.dropboxWebView loadRequest:requestBuilder];
 }

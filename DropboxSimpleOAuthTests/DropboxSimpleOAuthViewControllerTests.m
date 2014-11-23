@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *dropboxWebView;
 @property (strong, nonatomic) DropboxAuthenticationManager *dropboxAuthenticationManager;
-@property (strong, nonatomic) NSURLRequest *webLoginRequestBuilder;
 
 @end
 
@@ -94,10 +93,6 @@ describe(@"DropboxSimpleOAuthViewController", ^{
         expect(controller.dropboxAuthenticationManager.callbackURLString).to.equal(@"http://Delta-Tau-Chi.ios");
     });
     
-    it(@"has a webRequestBuiler", ^{
-        expect(controller.webLoginRequestBuilder).to.beInstanceOf([NSURLRequest class]);
-    });
-    
     describe(@"#viewDidAppear", ^{
         __block Swizzlean *superSwizz;
         __block BOOL isSuperCalled;
@@ -122,10 +117,9 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             controller.dropboxWebView = fakeWebView;
             
             fakeLoginRequest = OCMClassMock([NSURLRequest class]);
-            controller.webLoginRequestBuilder = fakeLoginRequest;
             
             NSURL *expectedLoginURL = [NSURL URLWithString:@"https://www.dropbox.com/1/oauth2/authorize?client_id=los-llaves&response_type=code&redirect_uri=http://Delta-Tau-Chi.ios"];
-            OCMStub([fakeLoginRequest buildWebLoginRequestWithURL:expectedLoginURL]).andReturn(fakeLoginRequest);
+            OCMStub(ClassMethod([fakeLoginRequest buildWebLoginRequestWithURL:expectedLoginURL])).andReturn(fakeLoginRequest);
             
             [controller viewDidAppear:YES];
         });
