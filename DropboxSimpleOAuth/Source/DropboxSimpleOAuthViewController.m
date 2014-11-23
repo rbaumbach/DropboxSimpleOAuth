@@ -136,8 +136,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
                                 self.callbackURL.absoluteString];
     
     NSURL *loginURL = [NSURL URLWithString:loginURLString];
-    NSURLRequest *requestBuilder = [self.webLoginRequestBuilder buildWebLoginRequestWithURL:loginURL
-                                                                            permissionScope:nil];
+    NSURLRequest *requestBuilder = [self.webLoginRequestBuilder buildWebLoginRequestWithURL:loginURL];
     
     [self.dropboxWebView loadRequest:requestBuilder];
 }

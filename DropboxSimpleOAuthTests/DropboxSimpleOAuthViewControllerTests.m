@@ -125,7 +125,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             controller.webLoginRequestBuilder = fakeLoginRequest;
             
             NSURL *expectedLoginURL = [NSURL URLWithString:@"https://www.dropbox.com/1/oauth2/authorize?client_id=los-llaves&response_type=code&redirect_uri=http://Delta-Tau-Chi.ios"];
-            OCMStub([fakeLoginRequest buildWebLoginRequestWithURL:expectedLoginURL permissionScope:nil]).andReturn(fakeLoginRequest);
+            OCMStub([fakeLoginRequest buildWebLoginRequestWithURL:expectedLoginURL]).andReturn(fakeLoginRequest);
             
             [controller viewDidAppear:YES];
         });
