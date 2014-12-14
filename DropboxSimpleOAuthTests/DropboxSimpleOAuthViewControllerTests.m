@@ -184,10 +184,6 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             }
                         });
                         
-                        it(@"calls completion with dropbox login response", ^{
-                            expect(retLoginResponse).to.equal(fakeDropboxResponse);
-                        });
-                        
                         it(@"pops itself off the navigation controller", ^{
                             OCMVerify([partialMock popViewControllerAnimated:YES]);
                         });
@@ -195,6 +191,10 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         it(@"removes the progress HUD", ^{
                             OCMVerify([hudClassMethodMock hideHUDForView:controller.view
                                                                 animated:YES]);
+                        });
+                        
+                        it(@"calls completion with dropbox login response", ^{
+                            expect(retLoginResponse).to.equal(fakeDropboxResponse);
                         });
                     });
 
@@ -207,10 +207,6 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             }
                         });
                         
-                        it(@"calls completion with dropbox login response", ^{
-                            expect(retLoginResponse).to.equal(fakeDropboxResponse);
-                        });
-                        
                         it(@"pops itself off the navigation controller", ^{
                             OCMVerify([partialMock dismissViewControllerAnimated:YES completion:nil]);
                         });
@@ -218,6 +214,10 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         it(@"removes the progress HUD", ^{
                             OCMVerify([hudClassMethodMock hideHUDForView:controller.view
                                                                 animated:YES]);
+                        });
+                        
+                        it(@"calls completion with dropbox login response", ^{
+                            expect(retLoginResponse).to.equal(fakeDropboxResponse);
                         });
                     });
                 });
@@ -265,14 +265,6 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             }
                         });
                         
-                        it(@"calls completion with nil token", ^{
-                            expect(retLoginResponse).to.beNil();
-                        });
-                        
-                        it(@"calls completion with AFNetworking error", ^{
-                            expect(retError).to.equal(bogusError);
-                        });
-                        
                         it(@"pops itself off the navigation controller", ^{
                             OCMVerify([partialMock popViewControllerAnimated:YES]);
                         });
@@ -280,6 +272,14 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         it(@"removes the progress HUD", ^{
                             OCMVerify([hudClassMethodMock hideHUDForView:controller.view
                                                                 animated:YES]);
+                        });
+                        
+                        it(@"calls completion with nil token", ^{
+                            expect(retLoginResponse).to.beNil();
+                        });
+                        
+                        it(@"calls completion with AFNetworking error", ^{
+                            expect(retError).to.equal(bogusError);
                         });
                     });
                     
@@ -292,14 +292,6 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             }
                         });
                         
-                        it(@"calls completion with nil token", ^{
-                            expect(retLoginResponse).to.beNil();
-                        });
-                        
-                        it(@"calls completion with AFNetworking error", ^{
-                            expect(retError).to.equal(bogusError);
-                        });
-                        
                         it(@"pops itself off the view controller", ^{
                             OCMVerify([partialMock dismissViewControllerAnimated:YES completion:nil]);
                         });
@@ -307,6 +299,14 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         it(@"removes the progress HUD", ^{
                             OCMVerify([hudClassMethodMock hideHUDForView:controller.view
                                                                 animated:YES]);
+                        });
+                        
+                        it(@"calls completion with nil token", ^{
+                            expect(retLoginResponse).to.beNil();
+                        });
+                        
+                        it(@"calls completion with AFNetworking error", ^{
+                            expect(retError).to.equal(bogusError);
                         });
                     });
                 });
@@ -416,14 +416,6 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         [controller webView:nil didFailLoadWithError:bogusRequestError];
                     });
                     
-                    it(@"calls completion with nil token", ^{
-                        expect(retLoginResponse).to.beNil();
-                    });
-                    
-                    it(@"calls completion with request error", ^{
-                        expect(retError).to.equal(bogusRequestError);
-                    });
-                    
                     it(@"pops itself off the navigation controller", ^{
                         OCMVerify([partialMock popViewControllerAnimated:YES]);
                     });
@@ -431,6 +423,14 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     it(@"removes the progress HUD", ^{
                         OCMVerify([hudClassMethodMock hideHUDForView:controller.view
                                                             animated:YES]);
+                    });
+                    
+                    it(@"calls completion with nil token", ^{
+                        expect(retLoginResponse).to.beNil();
+                    });
+                    
+                    it(@"calls completion with request error", ^{
+                        expect(retError).to.equal(bogusRequestError);
                     });
                 });
                 
@@ -441,14 +441,6 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         [controller webView:nil didFailLoadWithError:bogusRequestError];
                     });
                     
-                    it(@"calls completion with nil token", ^{
-                        expect(retLoginResponse).to.beNil();
-                    });
-                    
-                    it(@"calls completion with request error", ^{
-                        expect(retError).to.equal(bogusRequestError);
-                    });
-                    
                     it(@"pops itself off the view controller", ^{
                         OCMVerify([partialMock dismissViewControllerAnimated:YES completion:nil]);
                     });
@@ -456,6 +448,14 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     it(@"removes the progress HUD", ^{
                         OCMVerify([hudClassMethodMock hideHUDForView:controller.view
                                                             animated:YES]);
+                    });
+                    
+                    it(@"calls completion with nil token", ^{
+                        expect(retLoginResponse).to.beNil();
+                    });
+                    
+                    it(@"calls completion with request error", ^{
+                        expect(retError).to.equal(bogusRequestError);
                     });
                 });
             });
