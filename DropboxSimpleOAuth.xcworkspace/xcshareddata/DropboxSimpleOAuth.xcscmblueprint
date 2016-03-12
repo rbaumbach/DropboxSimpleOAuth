@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D8256A45CE81959F88EA9FFBF162D248C5313DD1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D8256A45CE81959F88EA9FFBF162D248C5313DD1" : 0,
+    "BCD84079E4DB6169FBA829D069D28DD52105A74F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "32E3AB0B-0FE8-401C-B735-52DE0483AEF1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D8256A45CE81959F88EA9FFBF162D248C5313DD1" : "DropboxSimpleOAuth",
+    "BCD84079E4DB6169FBA829D069D28DD52105A74F" : "SimpleOAuth2"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DropboxSimpleOAuth",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DropboxSimpleOAuth.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:rbaumbach\/SimpleOAuth2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BCD84079E4DB6169FBA829D069D28DD52105A74F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/rbaumbach\/DropboxSimpleOAuth.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D8256A45CE81959F88EA9FFBF162D248C5313DD1"
+    }
+  ]
+}

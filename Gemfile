@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 
-gem "rake"
-gem "cocoapods"
-gem "xcpretty"
+gem 'rake'
+gem 'cocoapods'
+gem 'fastlane'
