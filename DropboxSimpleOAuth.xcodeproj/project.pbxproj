@@ -352,7 +352,7 @@
 		AF247CC419BDEFF500AF94CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = RKB;
 				TargetAttributes = {
 					AF247CEF19BDEFF500AF94CE = {
@@ -586,6 +586,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -650,6 +651,7 @@
 				GCC_PREFIX_HEADER = "DropboxSimpleOAuth/DropboxSimpleOAuth-Prefix.pch";
 				INFOPLIST_FILE = "DropboxSimpleOAuth/DropboxSimpleOAuth-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RKB.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -661,10 +663,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_TESTABILITY = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropboxSimpleOAuth/DropboxSimpleOAuth-Prefix.pch";
 				INFOPLIST_FILE = "DropboxSimpleOAuth/DropboxSimpleOAuth-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RKB.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -687,6 +691,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DropboxSimpleOAuthTests/DropboxSimpleOAuthTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "RKB.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -706,6 +711,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropboxSimpleOAuth/DropboxSimpleOAuth-Prefix.pch";
 				INFOPLIST_FILE = "DropboxSimpleOAuthTests/DropboxSimpleOAuthTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "RKB.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
