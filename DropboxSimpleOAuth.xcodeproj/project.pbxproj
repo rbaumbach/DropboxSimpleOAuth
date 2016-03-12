@@ -314,6 +314,7 @@
 				AF247CC919BDEFF500AF94CE /* Frameworks */,
 				AF247CCA19BDEFF500AF94CE /* Resources */,
 				D966C173A8C44BA5997E1F98 /* Copy Pods Resources */,
+				17E9E8E7C5000710DF93BBAD /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,6 +334,7 @@
 				AF247CED19BDEFF500AF94CE /* Frameworks */,
 				AF247CEE19BDEFF500AF94CE /* Resources */,
 				B56B5FC3BB2C42D8A2825375 /* Copy Pods Resources */,
+				35AA8D2DD7FE57AA76F0079F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,6 +407,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		17E9E8E7C5000710DF93BBAD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DropboxSimpleOAuth/Pods-DropboxSimpleOAuth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2FF0C97F84554FCDB1753E07 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,6 +435,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		35AA8D2DD7FE57AA76F0079F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DropboxSimpleOAuthTests/Pods-DropboxSimpleOAuthTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9D7FE490FF79485CBA32E4BC /* Check Pods Manifest.lock */ = {
