@@ -9,7 +9,7 @@ A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app
 
 ## Adding DropboxSimpleOAuth to your project
 
-### Cocoapods
+### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add DropboxSimpleOAuth to your project.
 
