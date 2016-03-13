@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'DropboxSimpleOAuth'
-  s.version               = '0.1.0'
+  s.version               = '0.1.1'
   s.summary               = 'A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app.'
   s.homepage              = 'https://github.com/rbaumbach/DropboxSimpleOAuth'
   s.license               = { :type => 'MIT', :file => 'MIT-LICENSE.txt' }
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.requires_arc          = true
   s.platform              = :ios
   s.ios.deployment_target = '7.0'
-  s.public_header_files   = 'DropboxSimpleOAuth/DropboxSimpleOAuth.h',   'DropboxSimpleOAuth/DropboxSimpleOAuthViewController.h',
-                            'DropboxSimpleOAuth/DropboxLoginResponse.h'
+  s.public_header_files   = 'DropboxSimpleOAuth/Source/DropboxSimpleOAuth.h',   'DropboxSimpleOAuth/Source/DropboxSimpleOAuthViewController.h',
+                            'DropboxSimpleOAuth/Source/DropboxLoginResponse.h'
   s.source_files          = 'DropboxSimpleOAuth/Source/*.{h,m}'
   s.resources             = 'DropboxSimpleOAuth/Source/*.xib'
   s.frameworks            = 'Foundation', 'UIKit'
