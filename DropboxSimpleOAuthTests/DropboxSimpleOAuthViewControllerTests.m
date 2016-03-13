@@ -1,8 +1,7 @@
-#import <Specta/Specta.h>
-#import <Swizzlean/Swizzlean.h>
-#define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
+#import <Specta/Specta.h>
 #import <OCMock/OCMock.h>
+#import <Swizzlean/Swizzlean.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SimpleOAuth2/SimpleOAuth2.h>
 #import "UIAlertView+TestUtils.h"
@@ -45,6 +44,10 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                                                                        retLoginResponse = response;
                                                                        retError = error;
                                                                    }];
+    });
+    
+    afterEach(^{
+        [UIAlertView reset];
     });
     
     describe(@"init", ^{
@@ -139,6 +142,12 @@ describe(@"DropboxSimpleOAuthViewController", ^{
     });
     
     describe(@"<UIWebViewDelegate>", ^{
+        __block id fakeWebView;
+        
+        beforeEach(^{
+            fakeWebView = OCMClassMock([UIWebView class]);
+        });
+        
         describe(@"#webView:shouldStartLoadWithRequest:navigationType:", ^{
             __block id hudClassMethodMock;
             __block BOOL shouldStartLoad;
@@ -157,7 +166,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     fakeAuthManager = [[FakeDropboxAuthenticationManager alloc] init];
                     controller.dropboxAuthenticationManager = fakeAuthManager;
                     
-                    shouldStartLoad = [controller webView:nil
+                    shouldStartLoad = [controller webView:fakeWebView
                                shouldStartLoadWithRequest:fakeURLRequest
                                            navigationType:UIWebViewNavigationTypeFormSubmitted];
                 });
@@ -179,8 +188,8 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
                             partialMock = OCMPartialMock(navigationController);
                             
-                            if (fakeAuthManager.success) {
-                                fakeAuthManager.success(fakeDropboxResponse);
+                            if (fakeAuthManager.successBlock) {
+                                fakeAuthManager.successBlock(fakeDropboxResponse);
                             }
                         });
                         
@@ -202,8 +211,8 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         beforeEach(^{
                             partialMock = OCMPartialMock(controller);
                             
-                            if (fakeAuthManager.success) {
-                                fakeAuthManager.success(fakeDropboxResponse);
+                            if (fakeAuthManager.successBlock) {
+                                fakeAuthManager.successBlock(fakeDropboxResponse);
                             }
                         });
                         
@@ -233,7 +242,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     context(@"shouldShowErrorAlert == YES", ^{
                         beforeEach(^{
                             controller.shouldShowErrorAlert = YES;
-                            [controller webView:nil didFailLoadWithError:bogusError];
+                            [controller webView:fakeWebView didFailLoadWithError:bogusError];
                         });
                         
                         it(@"displays a UIAlertView with proper error", ^{
@@ -246,7 +255,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     context(@"shouldShowErrorAlert == NO", ^{
                         beforeEach(^{
                             controller.shouldShowErrorAlert = NO;
-                            [controller webView:nil didFailLoadWithError:bogusError];
+                            [controller webView:fakeWebView didFailLoadWithError:bogusError];
                         });
                         
                         it(@"does not display alert view for the error", ^{
@@ -260,8 +269,8 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
                             partialMock = OCMPartialMock(navigationController);
                             
-                            if (fakeAuthManager.failure) {
-                                fakeAuthManager.failure(bogusError);
+                            if (fakeAuthManager.failureBlock) {
+                                fakeAuthManager.failureBlock(bogusError);
                             }
                         });
                         
@@ -287,8 +296,8 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         beforeEach(^{
                             partialMock = OCMPartialMock(controller);
                             
-                            if (fakeAuthManager.failure) {
-                                fakeAuthManager.failure(bogusError);
+                            if (fakeAuthManager.failureBlock) {
+                                fakeAuthManager.failureBlock(bogusError);
                             }
                         });
                         
@@ -321,7 +330,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     fakeURLRequest = OCMClassMock([NSURLRequest class]);
                     OCMStub([fakeURLRequest oAuth2AuthorizationCode]).andReturn(nil);
 
-                    shouldStartLoad = [controller webView:nil
+                    shouldStartLoad = [controller webView:fakeWebView
                                shouldStartLoadWithRequest:fakeURLRequest
                                            navigationType:UIWebViewNavigationTypeFormSubmitted];
                 });
@@ -337,7 +346,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
             
             beforeEach(^{
                 hudClassMethodMock = OCMClassMock([MBProgressHUD class]);
-                [controller webViewDidFinishLoad:nil];
+                [controller webViewDidFinishLoad:fakeWebView];
             });
             
             it(@"removes the progress HUD", ^{
@@ -360,7 +369,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                                                             code:102
                                                         userInfo:@{ @"NSLocalizedDescription" : @"WTH Error"}];
                     
-                    [controller webView:nil didFailLoadWithError:bogusRequestError];
+                    [controller webView:fakeWebView didFailLoadWithError:bogusRequestError];
                 });
                 
                 it(@"does not display alert view for the error", ^{
@@ -386,7 +395,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                 context(@"shouldShowErrorAlert == YES", ^{
                     beforeEach(^{
                         controller.shouldShowErrorAlert = YES;
-                        [controller webView:nil didFailLoadWithError:bogusRequestError];
+                        [controller webView:fakeWebView didFailLoadWithError:bogusRequestError];
                     });
                     
                     it(@"displays a UIAlertView with proper error", ^{
@@ -399,7 +408,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                 context(@"shouldShowErrorAlert == NO", ^{
                     beforeEach(^{
                         controller.shouldShowErrorAlert = NO;
-                        [controller webView:nil didFailLoadWithError:bogusRequestError];
+                        [controller webView:fakeWebView didFailLoadWithError:bogusRequestError];
                     });
                     
                     it(@"does not display alert view for the error", ^{
@@ -413,7 +422,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
                         partialMock = OCMPartialMock(navigationController);
                         
-                        [controller webView:nil didFailLoadWithError:bogusRequestError];
+                        [controller webView:fakeWebView didFailLoadWithError:bogusRequestError];
                     });
                     
                     it(@"pops itself off the navigation controller", ^{
@@ -438,7 +447,7 @@ describe(@"DropboxSimpleOAuthViewController", ^{
                     beforeEach(^{
                         partialMock = OCMPartialMock(controller);
                         
-                        [controller webView:nil didFailLoadWithError:bogusRequestError];
+                        [controller webView:fakeWebView didFailLoadWithError:bogusRequestError];
                     });
                     
                     it(@"pops itself off the view controller", ^{

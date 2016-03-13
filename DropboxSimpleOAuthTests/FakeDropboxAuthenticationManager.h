@@ -4,7 +4,7 @@
 @interface FakeDropboxAuthenticationManager : DropboxAuthenticationManager
 
 @property (copy, nonatomic) NSString *authCode;
-@property (copy, nonatomic) void (^success)(DropboxLoginResponse *response);
-@property (copy, nonatomic) void (^failure)(NSError *error);
+@property (copy, nonatomic) void (^successBlock)(DropboxLoginResponse *response);
+@property (copy, nonatomic) void (^failureBlock)(NSError *error);
 
 @end

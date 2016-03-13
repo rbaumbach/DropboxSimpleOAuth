@@ -8,8 +8,8 @@
                                failure:(void (^)(NSError *error))failure
 {
     self.authCode = authCode;
-    self.success = success;
-    self.failure = failure;
+    self.successBlock = success;
+    self.failureBlock = failure;
 }
 
 @end

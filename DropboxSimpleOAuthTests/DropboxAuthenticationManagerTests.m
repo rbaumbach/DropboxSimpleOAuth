@@ -1,10 +1,9 @@
-#import <Specta/Specta.h>
-#define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
+#import <Specta/Specta.h>
 #import <OCMock/OCMock.h>
 #import <SimpleOAuth2/SimpleOAuth2.h>
-#import <RealFakes/RealFakes.h>
 #import "FakeDropboxOAuthResponse.h"
+#import "FakeSimpleOAuth2AuthenticationManager.h"
 #import "DropboxAuthenticationManager.h"
 #import "DropboxLoginResponse.h"
 #import "DropboxTokenParameters.h"
@@ -78,8 +77,8 @@ describe(@"DropboxAuthenticationManager", ^{
         
         context(@"On Success", ^{
             beforeEach(^{
-                if (fakeSimpleAuthManager.success) {
-                    fakeSimpleAuthManager.success([FakeDropboxOAuthResponse response]);
+                if (fakeSimpleAuthManager.successBlock) {
+                    fakeSimpleAuthManager.successBlock([FakeDropboxOAuthResponse response]);
                 }
             });
 
@@ -96,8 +95,8 @@ describe(@"DropboxAuthenticationManager", ^{
             beforeEach(^{
                 fakeError = OCMClassMock([NSError class]);
                 
-                if (fakeSimpleAuthManager.failure) {
-                    fakeSimpleAuthManager.failure(fakeError);
+                if (fakeSimpleAuthManager.failureBlock) {
+                    fakeSimpleAuthManager.failureBlock(fakeError);
                 }
             });
             
