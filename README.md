@@ -1,4 +1,4 @@
-# DropboxSimpleOAuth [![Build Status](https://travis-ci.org/rbaumbach/DropboxSimpleOAuth.svg?branch=master)](https://travis-ci.org/rbaumbach/DropboxSimpleOAuth) [![License](http://b.repl.ca/v1/License-MIT-blue.png)](https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/MIT.LICENSE) [![Cocoapod Version](http://img.shields.io/badge/pod-v0.1.0-blue.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![Cocoapod Platform](http://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth)
+# DropboxSimpleOAuth [![Build Status](https://travis-ci.org/rbaumbach/DropboxSimpleOAuth.svg?branch=master)](https://travis-ci.org/rbaumbach/DropboxSimpleOAuth) [![codecov.io](https://codecov.io/github/rbaumbach/DropboxSimpleOAuth/coverage.svg?branch=master)](https://codecov.io/github/rbaumbach/DropboxSimpleOAuth?branch=master) [![Cocoapod Version](https://img.shields.io/cocoapods/v/DropboxSimpleOAuth.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![Cocoapod Platform](http://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![License](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/MIT-LICENSE.txt)
 
 A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app.
 
@@ -63,28 +63,20 @@ viewController.shouldShowErrorAlert = NO;
 
 * Prerequisites: [ruby](https://github.com/sstephenson/rbenv), [ruby gems](https://rubygems.org/pages/download), [bundler](http://bundler.io)
 
-To use the included Rakefile to run expecta tests, run the setup.sh script to bundle required gems and cocoapods:
+This project has been setup to use [fastlane](https://fastlane.tools) to run the tests.
+
+First, run the setup.sh script to bundle required gems and CocoaPods when in the project directory:
 
 ```bash
 $ ./setup.sh
 ```
 
-Then run rake to run the tests on the command line:
+And then use fastlane to run all (Debug and Release) the tests on the command line:
 
 ```bash
-$ bundle exec rake
-```
-
-Additional rake tasks can be seen using rake -T:
-
-```bash
-$ rake -T
-rake build  # Build DropboxSimpleOAuth
-rake clean  # Clean
-rake test   # Run Tests
+$ bundle exec fastlane test
 ```
 
 ## Suggestions, requests, and feedback
 
-Thanks for checking out DropboxSimpleOAuth for your in-app Dropbox authentication.  Any feedback can be
-can be sent to: rbaumbach.github@gmail.com.
+Thanks for checking out DropboxSimpleOAuth for your in-app Dropbox authentication.  Any feedback can be can be sent to: github@ryan.codes.
