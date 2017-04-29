@@ -1,4 +1,4 @@
-# DropboxSimpleOAuth [![Build Status](https://travis-ci.org/rbaumbach/DropboxSimpleOAuth.svg?branch=master)](https://travis-ci.org/rbaumbach/DropboxSimpleOAuth) [![codecov.io](https://codecov.io/github/rbaumbach/DropboxSimpleOAuth/coverage.svg?branch=master)](https://codecov.io/github/rbaumbach/DropboxSimpleOAuth?branch=master) [![Cocoapod Version](https://img.shields.io/cocoapods/v/DropboxSimpleOAuth.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![Cocoapod Platform](http://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![License](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/MIT-LICENSE.txt)
+# DropboxSimpleOAuth [![CircleCI](https://circleci.com/gh/rbaumbach/DropboxSimpleOAuth.svg?style=svg)](https://circleci.com/gh/rbaumbach/DropboxSimpleOAuth) [![codecov.io](https://codecov.io/github/rbaumbach/DropboxSimpleOAuth/coverage.svg?branch=master)](https://codecov.io/github/rbaumbach/DropboxSimpleOAuth?branch=master) [![Cocoapod Version](https://img.shields.io/cocoapods/v/DropboxSimpleOAuth.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![Cocoapod Platform](http://img.shields.io/badge/platform-iOS-blue.svg)](http://cocoapods.org/?q=DropboxSimpleOAuth) [![License](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/rbaumbach/DropboxSimpleOAuth/blob/master/MIT-LICENSE.txt)
 
 A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app.
 
@@ -63,7 +63,7 @@ viewController.shouldShowErrorAlert = NO;
 
 * Prerequisites: [ruby](https://github.com/sstephenson/rbenv), [ruby gems](https://rubygems.org/pages/download), [bundler](http://bundler.io)
 
-This project has been setup to use [fastlane](https://fastlane.tools) to run the tests.
+This project has been setup to use [fastlane](https://fastlane.tools) to run the specs.
 
 First, run the setup.sh script to bundle required gems and CocoaPods when in the project directory:
 
@@ -71,10 +71,10 @@ First, run the setup.sh script to bundle required gems and CocoaPods when in the
 $ ./setup.sh
 ```
 
-And then use fastlane to run all (Debug and Release) the tests on the command line:
+And then use fastlane to run all the specs on the command line:
 
 ```bash
-$ bundle exec fastlane test
+$ bundle exec fastlane specs
 ```
 
 ## Suggestions, requests, and feedback
