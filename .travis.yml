@@ -3,6 +3,7 @@ language: objective-c
 
 before_install:
   - rvm install 2.3.1
+  - pod repo update
   - ./setup.sh
 script:
   - bundle exec fastlane specs
