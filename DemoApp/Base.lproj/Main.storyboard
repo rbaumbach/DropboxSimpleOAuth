@@ -1,26 +1,105 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gFE-dG-NeU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Main View Controller-->
+        <scene sceneID="hBh-NM-CPj">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="gFE-dG-NeU" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="GLY-qg-Vu3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xiy-2W-ECi"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="f1u-3V-tMA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYk-pK-vXs" userLabel="presentInstagramVCButton">
+                                <rect key="frame" x="120" y="283.5" width="135" height="30"/>
+                                <state key="normal" title="Present DropboxVC"/>
+                                <connections>
+                                    <action selector="presentDropboxVCTapped:" destination="gFE-dG-NeU" eventType="touchUpInside" id="QV0-eu-A4A"/>
+                                    <action selector="presentInstagramVCTapped:" destination="gFE-dG-NeU" eventType="touchUpInside" id="Zze-4g-UGH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9A-sa-7TU" userLabel="instagramVCOnNavControllerButton">
+                                <rect key="frame" x="90" y="353.5" width="196" height="30"/>
+                                <state key="normal" title="DropboxVC on navController"/>
+                                <connections>
+                                    <segue destination="ilZ-Jf-O6x" kind="presentation" id="one-aY-39M"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="zYk-pK-vXs" secondAttribute="bottom" constant="20" id="JDa-6c-lTj"/>
+                            <constraint firstItem="z9A-sa-7TU" firstAttribute="top" secondItem="f1u-3V-tMA" secondAttribute="centerY" constant="20" id="KQy-xG-1vY"/>
+                            <constraint firstItem="zYk-pK-vXs" firstAttribute="centerX" secondItem="f1u-3V-tMA" secondAttribute="centerX" id="N0c-da-54F"/>
+                            <constraint firstItem="z9A-sa-7TU" firstAttribute="centerX" secondItem="f1u-3V-tMA" secondAttribute="centerX" id="mud-Mp-okL"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3m7-rl-y4D" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-348" y="110"/>
+        </scene>
+        <!--JustA View Controller-->
+        <scene sceneID="Ky0-O6-CxG">
+            <objects>
+                <viewController id="LaX-3X-1nJ" customClass="JustAViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z6r-wT-aa5"/>
+                        <viewControllerLayoutGuide type="bottom" id="vsP-PE-Dpw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4xF-cQ-8Yx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGT-AW-0ak">
+                                <rect key="frame" x="84" y="318" width="207" height="30"/>
+                                <state key="normal" title="Push DropboxVC on nav stack"/>
+                                <connections>
+                                    <action selector="pushDropboxVCOnNavStackTapped:" destination="LaX-3X-1nJ" eventType="touchUpInside" id="aIL-ek-2qh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KGT-AW-0ak" firstAttribute="centerX" secondItem="4xF-cQ-8Yx" secondAttribute="centerX" id="uiq-yH-Ei0"/>
+                            <constraint firstItem="KGT-AW-0ak" firstAttribute="centerY" secondItem="4xF-cQ-8Yx" secondAttribute="centerY" id="ydx-Kl-Ehs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="48o-KO-AsP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbb-c4-ksQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="501"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2XU-QJ-gby">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ilZ-Jf-O6x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xok-H2-B1c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LaX-3X-1nJ" kind="relationship" relationship="rootViewController" id="Im0-dn-W7C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5o-Tl-kD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="501"/>
         </scene>
     </scenes>
 </document>

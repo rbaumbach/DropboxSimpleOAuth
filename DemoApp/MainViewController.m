@@ -20,25 +20,16 @@
                      completion:nil];
 }
 
-- (IBAction)dropboxVCOnNavControllerTapped:(id)sender
-{
-    JustAViewController *viewController = [[JustAViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [self presentViewController:navController
-                       animated:YES
-                     completion:nil];
-}
-
 #pragma mark - Private Method
 
 - (void)displayToken:(NSString *)authToken
 {
-    UIAlertView *tokenAlert = [[UIAlertView alloc] initWithTitle:@"Dropbox Token"
-                                                         message:[NSString stringWithFormat:@"Your Token is: %@", authToken]
-                                                        delegate:nil
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles:nil];
-    [tokenAlert show];
+    UIAlertController *tokenAlertController = [UIAlertController alertControllerWithTitle:@"Dropbox Token"
+                                                                                  message:[NSString stringWithFormat:@"Your Token is: %@", authToken]
+                                                                           preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:tokenAlertController
+                       animated:YES
+                     completion:nil];
 }
 
 @end
