@@ -17,6 +17,11 @@ A quick and simple way to authenticate a Dropbox user in your iPhone or iPad app
 2.  Install the pod(s) by running `pod install`.
 3.  Add DropboxSimpleOAuth to your files with `#import <DropboxSimpleOAuth/DropboxSimpleOAuth.h>`.
 
+### Carthage
+
+1. Add `github "rbaumbach/DropboxSimpleOAuth"` to your Cartfile.
+2. [Follow the directions](https://github.com/Carthage/Carthage#getting-started) to add the dynamic framework to your target.
+
 ### Clone from Github
 
 1.  Clone repository from github and copy files directly, or add it as a git submodule.
