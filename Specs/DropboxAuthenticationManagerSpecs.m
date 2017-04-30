@@ -2,12 +2,12 @@
 #import <Specta/Specta.h>
 #import <OCMock/OCMock.h>
 #import <SimpleOAuth2/SimpleOAuth2.h>
+
 #import "FakeDropboxOAuthResponse.h"
 #import "FakeSimpleOAuth2AuthenticationManager.h"
 #import "DropboxAuthenticationManager.h"
 #import "DropboxLoginResponse.h"
 #import "DropboxTokenParameters.h"
-
 
 @interface DropboxAuthenticationManager ()
 
@@ -18,7 +18,7 @@
 
 @end
 
-SpecBegin(DropboxAuthenticationManagerTests)
+SpecBegin(DropboxAuthenticationManager)
 
 describe(@"DropboxAuthenticationManager", ^{
     __block DropboxAuthenticationManager *dropboxAuthenticationManager;

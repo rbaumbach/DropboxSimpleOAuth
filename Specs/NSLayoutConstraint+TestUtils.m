@@ -1,6 +1,5 @@
 #import "NSLayoutConstraint+TestUtils.h"
 
-
 @implementation NSLayoutConstraint (TestUtils)
 
 - (BOOL)isEqualToNSLayoutConstraint:(NSLayoutConstraint *)layoutConstraint

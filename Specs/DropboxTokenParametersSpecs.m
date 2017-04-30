@@ -1,10 +1,10 @@
 #import <Expecta/Expecta.h>
 #import <Specta/Specta.h>
 #import <OCMock/OCMock.h>
+
 #import "DropboxTokenParameters.h"
 
-
-SpecBegin(DropboxTokenParametersTests)
+SpecBegin(DropboxTokenParameters)
 
 describe(@"DropboxTokenParameters", ^{
     __block DropboxTokenParameters *tokenParameters;

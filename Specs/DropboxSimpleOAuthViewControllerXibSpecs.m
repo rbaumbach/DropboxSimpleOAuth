@@ -1,10 +1,10 @@
 #import <Expecta/Expecta.h>
 #import <Specta/Specta.h>
+
 #import "NSLayoutConstraint+TestUtils.h"
 #import "DropboxSimpleOAuth.h"
 
-
-SpecBegin(DropboxSimpleOAuthViewControllerXibTests)
+SpecBegin(DropboxSimpleOAuthViewControllerXib)
 
 describe(@"DropboxSimpleOAuthViewControllerXib", ^{
     __block DropboxSimpleOAuthViewController *controller;

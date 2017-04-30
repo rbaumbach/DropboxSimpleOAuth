@@ -4,13 +4,12 @@
 #import <Swizzlean/Swizzlean.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SimpleOAuth2/SimpleOAuth2.h>
-#import "UIAlertView+TestUtils.h"
+
 #import "FakeDropboxAuthenticationManager.h"
 #import "DropboxSimpleOAuth.h"
 #import "DropboxTokenParameters.h"
 #import "FakeDropboxOAuthResponse.h"
 #import "DropboxAuthenticatioNManager.h"
-
 
 @interface DropboxSimpleOAuthViewController () <UIWebViewDelegate>
 
@@ -27,7 +26,7 @@
 
 @end
 
-SpecBegin(DropboxSimpleOAuthViewControllerTests)
+SpecBegin(DropboxSimpleOAuthViewController)
 
 describe(@"DropboxSimpleOAuthViewController", ^{
     __block DropboxSimpleOAuthViewController *controller;

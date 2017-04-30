@@ -1,10 +1,10 @@
 #import <Expecta/Expecta.h>
 #import <Specta/Specta.h>
+
 #import "DropboxSimpleOAuth.h"
 #import "FakeDropboxOAuthResponse.h"
 
-
-SpecBegin(DropboxLoginResponseTests)
+SpecBegin(DropboxLoginResponse)
 
 describe(@"DropboxLoginResponse", ^{
     __block DropboxLoginResponse *loginResponse;
