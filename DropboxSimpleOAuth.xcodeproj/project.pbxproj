@@ -52,6 +52,8 @@
 		94CE928D1EB571CC00648AAA /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CE92361EB5686100648AAA /* AFNetworking.framework */; };
 		94CE928E1EB571CC00648AAA /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CE92371EB5686100648AAA /* MBProgressHUD.framework */; };
 		94CE928F1EB571CC00648AAA /* SimpleOAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CE92381EB5686100648AAA /* SimpleOAuth2.framework */; };
+		94CE92911EB6294600648AAA /* DropboxSimpleOAuthViewControllerSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE92901EB6294600648AAA /* DropboxSimpleOAuthViewControllerSpecs.m */; };
+		94CE92931EB62C2900648AAA /* DropboxSimpleOAuthViewControllerXibSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CE92921EB62C2900648AAA /* DropboxSimpleOAuthViewControllerXibSpecs.m */; };
 		D2D2AEF6BB25BEBF06E57C6D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7533FFBA81DE3DCB5BDB1B50 /* libPods-Specs.a */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +154,8 @@
 		94CE927E1EB56E6900648AAA /* DropboxAuthenticationManagerSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxAuthenticationManagerSpecs.m; sourceTree = "<group>"; };
 		94CE927F1EB56E6900648AAA /* DropboxLoginResponseSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxLoginResponseSpecs.m; sourceTree = "<group>"; };
 		94CE92821EB56E6900648AAA /* DropboxTokenParametersSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxTokenParametersSpecs.m; sourceTree = "<group>"; };
+		94CE92901EB6294600648AAA /* DropboxSimpleOAuthViewControllerSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxSimpleOAuthViewControllerSpecs.m; sourceTree = "<group>"; };
+		94CE92921EB62C2900648AAA /* DropboxSimpleOAuthViewControllerXibSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxSimpleOAuthViewControllerXibSpecs.m; sourceTree = "<group>"; };
 		D28FCBC21B2E22859884552A /* Pods-Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Specs/Pods-Specs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +210,8 @@
 			children = (
 				94CE926F1EB56D6100648AAA /* Fakes */,
 				94CE92701EB56D6700648AAA /* Utils */,
+				94CE92901EB6294600648AAA /* DropboxSimpleOAuthViewControllerSpecs.m */,
+				94CE92921EB62C2900648AAA /* DropboxSimpleOAuthViewControllerXibSpecs.m */,
 				94CE927E1EB56E6900648AAA /* DropboxAuthenticationManagerSpecs.m */,
 				94CE927F1EB56E6900648AAA /* DropboxLoginResponseSpecs.m */,
 				94CE92821EB56E6900648AAA /* DropboxTokenParametersSpecs.m */,
@@ -573,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CE92911EB6294600648AAA /* DropboxSimpleOAuthViewControllerSpecs.m in Sources */,
 				94CE92831EB56E6900648AAA /* DropboxAuthenticationManagerSpecs.m in Sources */,
 				94CE92791EB56E4A00648AAA /* FakeDropboxOAuthResponse.m in Sources */,
 				94CE927D1EB56E5D00648AAA /* NSLayoutConstraint+TestUtils.m in Sources */,
@@ -580,6 +587,7 @@
 				94CE927A1EB56E4A00648AAA /* FakeSimpleOAuth2AuthenticationManager.m in Sources */,
 				94CE92841EB56E6900648AAA /* DropboxLoginResponseSpecs.m in Sources */,
 				94CE92781EB56E4A00648AAA /* FakeDropboxAuthenticationManager.m in Sources */,
+				94CE92931EB62C2900648AAA /* DropboxSimpleOAuthViewControllerXibSpecs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

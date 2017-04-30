@@ -17,7 +17,7 @@ describe(@"DropboxSimpleOAuthViewControllerXib", ^{
         
         NSBundle *bundle = [NSBundle bundleForClass:[DropboxSimpleOAuthViewController class]];
         
-        NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"DropboxSimpleOAuthViewController"
+        NSArray *nibViews = [bundle loadNibNamed:@"DropboxSimpleOAuthViewController"
                                                           owner:controller
                                                         options:nil];
         

@@ -49,7 +49,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
                    callbackURL:(NSURL *)callbackURL
                     completion:(void (^)(DropboxLoginResponse *response, NSError *error))completion
 {
-    self = [super initWithNibName:@"DropboxOAuthViewController" bundle:[NSBundle bundleForClass:[DropboxSimpleOAuthViewController class]]];
+    self = [super initWithNibName:@"DropboxSimpleOAuthViewController" bundle:[NSBundle bundleForClass:[DropboxSimpleOAuthViewController class]]];
     if (self) {
         self.appKey = appKey;
         self.appSecret = appSecret;
