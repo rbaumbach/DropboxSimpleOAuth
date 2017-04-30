@@ -1,6 +1,5 @@
 #import "FakeSimpleOAuth2AuthenticationManager.h"
 
-
 @implementation FakeSimpleOAuth2AuthenticationManager
 
 - (void)authenticateOAuthClient:(NSURL *)authURL

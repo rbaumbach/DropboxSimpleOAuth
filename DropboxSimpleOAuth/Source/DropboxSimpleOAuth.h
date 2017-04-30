@@ -1,4 +1,4 @@
-//Copyright (c) 2016 Ryan Baumbach <github@ryan.codes>
+//Copyright (c) 2017 Ryan Baumbach <github@ryan.codes>
 //
 //Permission is hereby granted, free of charge, to any person obtaining
 //a copy of this software and associated documentation files (the "Software"),
@@ -19,9 +19,15 @@
 //OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "DropboxSimpleOAuthViewController.h"
-#import "DropboxLoginResponse.h"
+//! Project version number for DropboxSimpleOAuth.
+FOUNDATION_EXPORT double DropboxSimpleOAuthVersionNumber;
 
+//! Project version string for DropboxSimpleOAuth.
+FOUNDATION_EXPORT const unsigned char DropboxSimpleOAuthVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <DropboxSimpleOAuth/PublicHeader.h>
+
+#import <DropboxSimpleOAuth/DropboxSimpleOAuthViewController.h>
+#import <DropboxSimpleOAuth/DropboxLoginResponse.h>

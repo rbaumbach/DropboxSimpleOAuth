@@ -1,6 +1,5 @@
 #import "DropboxAuthenticationManager.h"
 
-
 @interface FakeDropboxAuthenticationManager : DropboxAuthenticationManager
 
 @property (copy, nonatomic) NSString *authCode;

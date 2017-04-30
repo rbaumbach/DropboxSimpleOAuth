@@ -1,4 +1,4 @@
-//Copyright (c) 2016 Ryan Baumbach <github@ryan.codes>
+//Copyright (c) 2017 Ryan Baumbach <github@ryan.codes>
 //
 //Permission is hereby granted, free of charge, to any person obtaining
 //a copy of this software and associated documentation files (the "Software"),
@@ -27,7 +27,6 @@
 #import "DropboxTokenParameters.h"
 #import "DropboxAuthenticationManager.h"
 
-
 NSString *const DropboxAuthClientIDEndpoint = @"/1/oauth2/authorize?client_id=";
 NSString *const DropboxAuthRequestParams = @"&response_type=code&redirect_uri=";
 NSString *const NSLocalizedDescriptionKey = @"NSLocalizedDescription";
@@ -50,7 +49,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
                    callbackURL:(NSURL *)callbackURL
                     completion:(void (^)(DropboxLoginResponse *response, NSError *error))completion
 {
-    self = [super init];
+    self = [super initWithNibName:@"DropboxOAuthViewController" bundle:[NSBundle bundleForClass:[DropboxOAuthViewController class]]];
     if (self) {
         self.appKey = appKey;
         self.appSecret = appSecret;

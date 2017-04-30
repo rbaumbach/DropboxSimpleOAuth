@@ -1,6 +1,5 @@
 #import "FakeDropboxAuthenticationManager.h"
 
-
 @implementation FakeDropboxAuthenticationManager
 
 - (void)authenticateClientWithAuthCode:(NSString *)authCode

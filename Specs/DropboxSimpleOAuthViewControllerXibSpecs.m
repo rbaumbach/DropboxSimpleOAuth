@@ -14,6 +14,9 @@ describe(@"DropboxSimpleOAuthViewControllerXib", ^{
     beforeEach(^{
         // controller is only loaded for ownership needs when loading the nib from the bundle
         controller = [[DropboxSimpleOAuthViewController alloc] init];
+        
+        NSBundle *bundle = [NSBundle bundleForClass:[DropboxSimpleOAuthViewController class]];
+        
         NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"DropboxSimpleOAuthViewController"
                                                           owner:controller
                                                         options:nil];

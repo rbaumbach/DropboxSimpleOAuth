@@ -19,6 +19,10 @@ Pods/
 ObjectiveC.gcda
 ObjectiveC.gcno
 
+# Carthage
+Carthage
+DropboxSimpleOAuth.framework.zip
+
 # Fastlane
 fastlane/report.xml
 fastlane/.env*private*

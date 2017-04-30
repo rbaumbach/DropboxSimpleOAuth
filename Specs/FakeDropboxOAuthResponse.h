@@ -1,4 +1,4 @@
-
+@import Foundation;
 
 @interface FakeDropboxOAuthResponse : NSObject
 

@@ -1,6 +1,5 @@
 #import "FakeDropboxOAuthResponse.h"
 
-
 @implementation FakeDropboxOAuthResponse
 
 + (NSDictionary *)response

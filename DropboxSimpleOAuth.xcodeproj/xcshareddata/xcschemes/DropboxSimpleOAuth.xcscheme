@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF247CCB19BDEFF500AF94CE"
-               BuildableName = "DropboxSimpleOAuth.app"
+               BlueprintIdentifier = "9449350B1EB563500010F65A"
+               BuildableName = "DropboxSimpleOAuth.framework"
                BlueprintName = "DropboxSimpleOAuth"
                ReferencedContainer = "container:DropboxSimpleOAuth.xcodeproj">
             </BuildableReference>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF247CEF19BDEFF500AF94CE"
-               BuildableName = "DropboxSimpleOAuthTests.xctest"
-               BlueprintName = "DropboxSimpleOAuthTests"
+               BlueprintIdentifier = "944935171EB563780010F65A"
+               BuildableName = "Specs.xctest"
+               BlueprintName = "Specs"
                ReferencedContainer = "container:DropboxSimpleOAuth.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF247CCB19BDEFF500AF94CE"
-            BuildableName = "DropboxSimpleOAuth.app"
+            BlueprintIdentifier = "9449350B1EB563500010F65A"
+            BuildableName = "DropboxSimpleOAuth.framework"
             BlueprintName = "DropboxSimpleOAuth"
             ReferencedContainer = "container:DropboxSimpleOAuth.xcodeproj">
          </BuildableReference>
@@ -65,8 +65,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF247CCB19BDEFF500AF94CE"
-            BuildableName = "DropboxSimpleOAuth.app"
+            BlueprintIdentifier = "9449350B1EB563500010F65A"
+            BuildableName = "DropboxSimpleOAuth.framework"
             BlueprintName = "DropboxSimpleOAuth"
             ReferencedContainer = "container:DropboxSimpleOAuth.xcodeproj">
          </BuildableReference>
@@ -84,8 +84,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF247CCB19BDEFF500AF94CE"
-            BuildableName = "DropboxSimpleOAuth.app"
+            BlueprintIdentifier = "9449350B1EB563500010F65A"
+            BuildableName = "DropboxSimpleOAuth.framework"
             BlueprintName = "DropboxSimpleOAuth"
             ReferencedContainer = "container:DropboxSimpleOAuth.xcodeproj">
          </BuildableReference>
