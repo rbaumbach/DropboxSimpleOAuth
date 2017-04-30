@@ -27,7 +27,6 @@
                                 <state key="normal" title="Present DropboxVC"/>
                                 <connections>
                                     <action selector="presentDropboxVCTapped:" destination="gFE-dG-NeU" eventType="touchUpInside" id="QV0-eu-A4A"/>
-                                    <action selector="presentInstagramVCTapped:" destination="gFE-dG-NeU" eventType="touchUpInside" id="Zze-4g-UGH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9A-sa-7TU" userLabel="instagramVCOnNavControllerButton">
