@@ -82,6 +82,10 @@ And then use fastlane to run all the specs on the command line:
 $ bundle exec fastlane specs
 ```
 
+## Version History
+
+Version history can be found [on releases page](https://github.com/rbaumbach/DropboxSimpleOAuth/releases).
+
 ## Suggestions, requests, and feedback
 
 Thanks for checking out DropboxSimpleOAuth for your in-app Dropbox authentication.  Any feedback can be can be sent to: github@ryan.codes.
