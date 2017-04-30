@@ -1,6 +1,5 @@
 #import <Expecta/Expecta.h>
 #import <Specta/Specta.h>
-#import <OCMock/OCMock.h>
 #import <SimpleOAuth2/SimpleOAuth2.h>
 
 #import "FakeDropboxOAuthResponse.h"
@@ -90,10 +89,10 @@ describe(@"DropboxAuthenticationManager", ^{
         });
         
         context(@"On Failure", ^{
-            __block id fakeError;
+            __block NSError *fakeError;
             
             beforeEach(^{
-                fakeError = OCMClassMock([NSError class]);
+                fakeError = [NSError errorWithDomain:@"fake domain" code:99 userInfo:nil];
                 
                 if (fakeSimpleAuthManager.failureBlock) {
                     fakeSimpleAuthManager.failureBlock(fakeError);
