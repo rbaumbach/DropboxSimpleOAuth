@@ -20,6 +20,8 @@
 		944935391EB566260010F65A /* DropboxSimpleOAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9449352D1EB566260010F65A /* DropboxSimpleOAuthViewController.xib */; };
 		9449353A1EB566260010F65A /* DropboxTokenParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 9449352E1EB566260010F65A /* DropboxTokenParameters.h */; };
 		9449353B1EB566260010F65A /* DropboxTokenParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 9449352F1EB566260010F65A /* DropboxTokenParameters.m */; };
+		94A3CB271EC6C07F00749596 /* Snapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A3CB261EC6C07F00749596 /* Snapshots.swift */; };
+		94A3CB2F1EC6C0CF00749596 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A3CB2E1EC6C0CF00749596 /* SnapshotHelper.swift */; };
 		94CE92391EB5686100648AAA /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CE92361EB5686100648AAA /* AFNetworking.framework */; };
 		94CE923A1EB5686100648AAA /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CE92371EB5686100648AAA /* MBProgressHUD.framework */; };
 		94CE923B1EB5686100648AAA /* SimpleOAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CE92381EB5686100648AAA /* SimpleOAuth2.framework */; };
@@ -64,6 +66,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9449350B1EB563500010F65A;
 			remoteInfo = DropboxSimpleOAuth;
+		};
+		94A3CB291EC6C07F00749596 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF247CC419BDEFF500AF94CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94CE92411EB569EE00648AAA;
+			remoteInfo = DemoApp;
 		};
 		94CE926C1EB56C8C00648AAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -128,6 +137,10 @@
 		9449352D1EB566260010F65A /* DropboxSimpleOAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DropboxSimpleOAuthViewController.xib; path = Source/DropboxSimpleOAuthViewController.xib; sourceTree = "<group>"; };
 		9449352E1EB566260010F65A /* DropboxTokenParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DropboxTokenParameters.h; path = Source/DropboxTokenParameters.h; sourceTree = "<group>"; };
 		9449352F1EB566260010F65A /* DropboxTokenParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DropboxTokenParameters.m; path = Source/DropboxTokenParameters.m; sourceTree = "<group>"; };
+		94A3CB241EC6C07F00749596 /* Snapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Snapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A3CB261EC6C07F00749596 /* Snapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshots.swift; sourceTree = "<group>"; };
+		94A3CB281EC6C07F00749596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94A3CB2E1EC6C0CF00749596 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		94CE92361EB5686100648AAA /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		94CE92371EB5686100648AAA /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		94CE92381EB5686100648AAA /* SimpleOAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleOAuth2.framework; path = Carthage/Build/iOS/SimpleOAuth2.framework; sourceTree = "<group>"; };
@@ -179,6 +192,13 @@
 				94CE928F1EB571CC00648AAA /* SimpleOAuth2.framework in Frameworks */,
 				9449351D1EB563780010F65A /* DropboxSimpleOAuth.framework in Frameworks */,
 				D2D2AEF6BB25BEBF06E57C6D /* libPods-Specs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94A3CB211EC6C07F00749596 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +257,16 @@
 				9449352F1EB566260010F65A /* DropboxTokenParameters.m */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		94A3CB251EC6C07F00749596 /* Snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				94A3CB2E1EC6C0CF00749596 /* SnapshotHelper.swift */,
+				94A3CB261EC6C07F00749596 /* Snapshots.swift */,
+				94A3CB281EC6C07F00749596 /* Info.plist */,
+			);
+			path = Snapshots;
 			sourceTree = "<group>";
 		};
 		94CE923D1EB569A200648AAA /* Supporting Files */ = {
@@ -325,6 +355,7 @@
 				94CE92431EB569EE00648AAA /* DemoApp */,
 				9449350D1EB563500010F65A /* DropboxSimpleOAuth */,
 				944935191EB563780010F65A /* Specs */,
+				94A3CB251EC6C07F00749596 /* Snapshots */,
 				AF247CCE19BDEFF500AF94CE /* Frameworks */,
 				AF247CCD19BDEFF500AF94CE /* Products */,
 				D45D005B53F8F6DB3DEBC253 /* Pods */,
@@ -337,6 +368,7 @@
 				9449350C1EB563500010F65A /* DropboxSimpleOAuth.framework */,
 				944935181EB563780010F65A /* Specs.xctest */,
 				94CE92421EB569EE00648AAA /* DemoApp.app */,
+				94A3CB241EC6C07F00749596 /* Snapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,6 +456,24 @@
 			productReference = 944935181EB563780010F65A /* Specs.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		94A3CB231EC6C07F00749596 /* Snapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94A3CB2D1EC6C07F00749596 /* Build configuration list for PBXNativeTarget "Snapshots" */;
+			buildPhases = (
+				94A3CB201EC6C07F00749596 /* Sources */,
+				94A3CB211EC6C07F00749596 /* Frameworks */,
+				94A3CB221EC6C07F00749596 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94A3CB2A1EC6C07F00749596 /* PBXTargetDependency */,
+			);
+			name = Snapshots;
+			productName = Snapshots;
+			productReference = 94A3CB241EC6C07F00749596 /* Snapshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		94CE92411EB569EE00648AAA /* DemoApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94CE92561EB569EE00648AAA /* Build configuration list for PBXNativeTarget "DemoApp" */;
@@ -449,6 +499,7 @@
 		AF247CC419BDEFF500AF94CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = RKB;
 				TargetAttributes = {
@@ -459,6 +510,11 @@
 					944935171EB563780010F65A = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
+					};
+					94A3CB231EC6C07F00749596 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 94CE92411EB569EE00648AAA;
 					};
 					94CE92411EB569EE00648AAA = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -482,6 +538,7 @@
 				94CE92411EB569EE00648AAA /* DemoApp */,
 				9449350B1EB563500010F65A /* DropboxSimpleOAuth */,
 				944935171EB563780010F65A /* Specs */,
+				94A3CB231EC6C07F00749596 /* Snapshots */,
 			);
 		};
 /* End PBXProject section */
@@ -496,6 +553,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		944935161EB563780010F65A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94A3CB221EC6C07F00749596 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -591,6 +655,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94A3CB201EC6C07F00749596 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A3CB271EC6C07F00749596 /* Snapshots.swift in Sources */,
+				94A3CB2F1EC6C0CF00749596 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94CE923E1EB569EE00648AAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,6 +682,11 @@
 			isa = PBXTargetDependency;
 			target = 9449350B1EB563500010F65A /* DropboxSimpleOAuth */;
 			targetProxy = 9449351E1EB563780010F65A /* PBXContainerItemProxy */;
+		};
+		94A3CB2A1EC6C07F00749596 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94CE92411EB569EE00648AAA /* DemoApp */;
+			targetProxy = 94A3CB291EC6C07F00749596 /* PBXContainerItemProxy */;
 		};
 		94CE926D1EB56C8C00648AAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -738,6 +816,46 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rkb.Specs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		94A3CB2B1EC6C07F00749596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = Snapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rkb.Snapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DemoApp;
+			};
+			name = Debug;
+		};
+		94A3CB2C1EC6C07F00749596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = Snapshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rkb.Snapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DemoApp;
 			};
 			name = Release;
 		};
@@ -887,6 +1005,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		94A3CB2D1EC6C07F00749596 /* Build configuration list for PBXNativeTarget "Snapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94A3CB2B1EC6C07F00749596 /* Debug */,
+				94A3CB2C1EC6C07F00749596 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		94CE92561EB569EE00648AAA /* Build configuration list for PBXNativeTarget "DemoApp" */ = {
 			isa = XCConfigurationList;
