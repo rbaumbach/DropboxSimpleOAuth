@@ -1013,6 +1013,7 @@
 				94A3CB2C1EC6C07F00749596 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94CE92561EB569EE00648AAA /* Build configuration list for PBXNativeTarget "DemoApp" */ = {
 			isa = XCConfigurationList;
