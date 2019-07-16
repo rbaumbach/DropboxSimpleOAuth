@@ -1,4 +1,4 @@
-//Copyright (c) 2017 Ryan Baumbach <github@ryan.codes>
+//Copyright (c) 2014-2019 Ryan Baumbach <github@ryan.codes>
 //
 //Permission is hereby granted, free of charge, to any person obtaining
 //a copy of this software and associated documentation files (the "Software"),
@@ -61,7 +61,7 @@ NSString *const DropboxTokenEndpoint = @"/1/oauth2/token";
                                failure:(void (^)(NSError *error))failure
 {
     NSString *authenticationURLString = [NSString stringWithFormat:@"%@%@", DropboxAuthURL, DropboxTokenEndpoint];
-    
+
     [self.simpleOAuth2AuthenticationManager authenticateOAuthClient:[NSURL URLWithString:authenticationURLString]
                                                     tokenParameters:[self dropboxTokenParametersFromAuthCode:authCode]
                                                             success:^(id authResponseObject) {
@@ -79,7 +79,7 @@ NSString *const DropboxTokenEndpoint = @"/1/oauth2/token";
     dropboxTokenParameters.appSecret = self.appSecret;
     dropboxTokenParameters.callbackURLString = self.callbackURLString;
     dropboxTokenParameters.authorizationCode = authCode;
-    
+
     return dropboxTokenParameters;
 }
 

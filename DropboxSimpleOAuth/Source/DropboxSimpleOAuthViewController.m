@@ -1,4 +1,4 @@
-//Copyright (c) 2017 Ryan Baumbach <github@ryan.codes>
+//Copyright (c) 2014-2019 Ryan Baumbach <github@ryan.codes>
 //
 //Permission is hereby granted, free of charge, to any person obtaining
 //a copy of this software and associated documentation files (the "Software"),
@@ -76,7 +76,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+
     [self loadDropboxLogin];
 }
 
@@ -85,7 +85,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 {
     NSString *authorizationCode = [request oAuth2AuthorizationCode];
-    
+
     if (authorizationCode) {
         [self.dropboxAuthenticationManager authenticateClientWithAuthCode:authorizationCode
                                                                   success:^(DropboxLoginResponse *reponse) {
@@ -108,14 +108,14 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 {
     if (error.code != 102) {
         [self completeWithError:error];
-        
+
         if (self.shouldShowErrorAlert) {
             [self showErrorAlert:error];
         }
-        
+
         [self dismissViewController];
     }
-    
+
     [self hideProgressHUD];
 }
 
@@ -124,17 +124,17 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 - (void)loadDropboxLogin
 {
     [self showProgressHUD];
-    
+
     NSString *loginURLString = [NSString stringWithFormat:@"%@%@%@%@%@",
                                 DropboxAuthURL,
                                 DropboxAuthClientIDEndpoint,
                                 self.appKey,
                                 DropboxAuthRequestParams,
                                 self.callbackURL.absoluteString];
-    
+
     NSURL *loginURL = [NSURL URLWithString:loginURLString];
     NSURLRequest *requestBuilder = [NSURLRequest buildWebLoginRequestWithURL:loginURL];
-    
+
     [self.dropboxWebView loadRequest:requestBuilder];
 }
 
@@ -142,7 +142,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 {
     [self dismissViewController];
     [self hideProgressHUD];
-    
+
     self.completion(response, nil);
 }
 
@@ -150,11 +150,11 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 {
     [self dismissViewController];
     [self hideProgressHUD];
-    
+
     if (self.shouldShowErrorAlert) {
         [self showErrorAlert:error];
     }
-    
+
     self.completion(nil, error);
 }
 
@@ -171,7 +171,7 @@ NSString *const DropboxLoginCancelButtonTitle = @"OK";
 - (void)showErrorAlert:(NSError *)error
 {
     NSString *errorMessage = [NSString stringWithFormat:@"%@ - %@", error.domain, error.userInfo[NSLocalizedDescriptionKey]];
-    
+
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:DropboxLoginErrorAlertTitle
                                                          message:errorMessage
                                                         delegate:nil
